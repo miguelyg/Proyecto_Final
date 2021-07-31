@@ -22,7 +22,10 @@
 		</header>
 		<div class="contenedor">
 			<div class="Carrito">
-				<img src="../assets/images/other/arrow.svg" alt="flecha" />
+                <router-link class="boton" to="/">
+                    <img src="../assets/images/other/arrow.svg" alt="flecha" />
+                </router-link>	
+				
 				<h2>Carrito de compras</h2>
 			</div>
 		</div>
