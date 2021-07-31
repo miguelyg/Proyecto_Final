@@ -30,7 +30,9 @@
             </div>            
         </div>
     </section>
-    <div></div>
+    <div>
+        <br>
+    </div>
 </template>
 
 <script>
