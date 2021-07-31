@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap');
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	font-size: 16px;
+	font-family: 'Poppins', sans-serif;
+	/* font-family: 'Roboto', sans-serif; */
+}
+
+li {
+	list-style: none;
+}
+.fondo {
+	background-color: black;
+	width: 100%;
+	color: white;
+}
+.contenedor {
+	margin: 0 auto;
+	width: 90%;
+	height: 60px;
+	display: flex;
+	justify-content: space-between;
+}
+.header {
+	width: 180px;
+	height: 100%;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	font-size: 14px;
+}
+.botones {
+	width: 100px;
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.carrito-titulo {
+	width: 290px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 1rem;
+}
+.curso {
+	border: 1px solid black;
+	width: 60%;
+	height: 105px;
+	display: flex;
+	justify-content: space-around;
+	font-size: 12px;
+}
+.curso-titulo {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.curso-contenido {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.lista-cursos {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 30px;
