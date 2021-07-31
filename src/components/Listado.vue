@@ -9,7 +9,7 @@
                         <p>Desarrollo Front-End</p>
                         <div class="curso_botones">
                             <button>Carrito</button>
-                            <button>Ver mas</button>
+                            <router-link to="/detalle">Ver Mas</router-link>
                         </div>
                     
                     </div>

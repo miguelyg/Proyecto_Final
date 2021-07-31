@@ -1,17 +1,31 @@
 <template>
-  <div class="home">
-    <h1>This is an home page</h1>
-  </div>
+    <Header />
+    <Listado />
+    <Aviso />
+    <Beneficios />
+    <Footer />
+    <router-view/>
 </template>
 
-<style scoped>
-
-</style>
-
 <script>
-// @ is an alias to /src
+import Header from '@/components/Header.vue'
+import Listado from '@/components/Listado.vue'
+import Aviso from '@/components/Aviso.vue'
+import Beneficios from '@/components/Beneficios.vue'
+import Footer from '@/components/footer.vue'
 
 export default {
-
+  name: 'App',
+  components: {
+    Header,
+    Listado,
+    Aviso,
+    Beneficios,
+    Footer
+  }
 }
 </script>
+
+<style>
+
+</style>
