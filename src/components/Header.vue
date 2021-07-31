@@ -72,7 +72,6 @@ export default {
 	background-repeat: no-repeat;
 	background-size: cover;
     height: calc(100vh - 200px);
-	width: 100%;
 }
 .header_navegacion{
 	display: flex;

@@ -3,11 +3,9 @@
   <section class="detalles">
     <h1>¿En qué consiste?</h1>
   </section>
-  <h1>¿En qué consiste?</h1>
-  <h1>¿En qué consiste?</h1>
-  <h1>¿En qué consiste?</h1>
-  <h1>¿En qué consiste?</h1>
-  <h1>¿En qué consiste?</h1>
+  <section>
+      
+  </section>
   <router-view/>
 
 </template>
