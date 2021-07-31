@@ -9,7 +9,7 @@
                         <p>Desarrollo Front-End</p>
                         <div class="curso_botones">
                             <button>Carrito</button>
-                            <router-link to="/detalle">Ver Mas</router-link>
+                            <router-link class="boton" to="/detalle">Ver Mas</router-link>
                         </div>
                     
                     </div>
@@ -18,7 +18,7 @@
                         <p>Desarrollo Front-End</p>
                         <div class="curso_botones">
                             <button>Carrito</button>
-                            <button>Ver mas</button>
+                            <router-link class="boton" to="/detalle">Ver Mas</router-link>
                         </div>
                     </div>
                     <div class="lista_curso">
@@ -26,7 +26,7 @@
                         <p>Desarrollo Front-End</p>
                         <div class="curso_botones">
                             <button>Carrito</button>
-                            <button>Ver mas</button>
+                            <router-link class="boton" to="/detalle">Ver Mas</router-link>
                         </div>
                     </div>
                     <div class="lista_curso">
@@ -34,7 +34,7 @@
                         <p>Desarrollo Front-End</p>
                         <div class="curso_botones">
                             <button>Carrito</button>
-                            <button>Ver mas</button>
+                            <router-link class="boton" to="/detalle">Ver Mas</router-link>
                         </div>
                     </div>
                     <div class="lista_curso">
@@ -42,7 +42,7 @@
                         <p>Desarrollo Front-End</p>
                         <div class="curso_botones">
                             <button>Carrito</button>
-                            <button>Ver mas</button>
+                            <router-link class="boton" to="/detalle">Ver Mas</router-link>
                         </div>
                     </div>
                     <div class="lista_curso">
@@ -50,7 +50,7 @@
                         <p>Desarrollo Front-End</p>
                         <div class="curso_botones">
                             <button>Carrito</button>
-                            <button>Ver mas</button>
+                            <router-link class="boton" to="/detalle">Ver Mas</router-link>
                         </div>
                     </div>     
                     <div class="lista_curso">
@@ -58,7 +58,7 @@
                         <p>Desarrollo Front-End</p>
                         <div class="curso_botones">
                             <button>Carrito</button>
-                            <button>Ver mas</button>
+                            <router-link class="boton" to="/detalle">Ver Mas</router-link>
                         </div>
                     </div>  
                     <div class="lista_curso">
@@ -66,7 +66,7 @@
                         <p>Desarrollo Front-End</p>
                         <div class="curso_botones">
                             <button>Carrito</button>
-                            <button>Ver mas</button>
+                            <router-link class="boton" to="/detalle">Ver Mas</router-link>
                         </div>
                     </div>                 
                 </div>
@@ -83,11 +83,17 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .listado
 {
 	display: block;
 	padding-top: 250px;
+}
+.boton 
+{
+    font-size: 10pt;
+    font-weight: 900;
+    text-transform: capitalize;
 }
 .listado_programas
 {

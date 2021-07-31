@@ -9,10 +9,16 @@
                 </ul>
                 <ul class="navegacion_opciones">
                     <li class="opciones_carrito">
-                        <img src="../assets/images/carrito.svg" alt="">
+						<router-link class="boton" to="/miscompras">
+							<img src="../assets/images/carrito.svg" alt="">
+						</router-link>	                        
                     </li>
                     <li class="opciones_menu">
-                        <img src="../assets/images/sanguchito.svg" alt="">
+                        	
+						<router-link class="boton" to="/login">
+							<img src="../assets/images/sanguchito.svg" alt="">	
+						</router-link>	
+													
                     </li>
                 </ul>
             </nav>
@@ -64,7 +70,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .header{
 	display: block;
 	background-image: url('../assets/images/fondo.png');
@@ -72,6 +78,12 @@ export default {
 	background-repeat: no-repeat;
 	background-size: cover;
     height: calc(100vh - 200px);
+}
+.boton 
+{
+    font-size: 10pt;
+    font-weight: 900;
+    text-transform: capitalize;
 }
 .header_navegacion{
 	display: flex;

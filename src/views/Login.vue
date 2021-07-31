@@ -1,4 +1,5 @@
 <template>
+
   <div class="fondo">
 			<div class="contenedor">
 				<header class="header">
