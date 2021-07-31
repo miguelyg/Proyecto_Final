@@ -16,63 +16,39 @@ li {
 	list-style: none;
 }
 .fondo {
-	background-color: black;
+	background: url(../img/fondo.png);
 	width: 100%;
-	color: white;
+	height: 100vh;
+	background-size: cover;
+	display: grid;
+	grid-template-columns: 1fr 40%;
 }
 .contenedor {
 	margin: 0 auto;
 	width: 90%;
 	height: 60px;
-	display: flex;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: repeat(3,fr);
+	/* display: flex;
+	justify-content: space-between; */
 }
 .header {
 	width: 180px;
 	height: 100%;
-
+	padding-top: 10px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-
 	font-size: 14px;
+	color: white;
 }
-.botones {
-	width: 100px;
-	height: 100%;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-}
-.carrito-titulo {
-	width: 290px;
-	height: 40px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	font-size: 1rem;
-}
-.curso {
-	border: 1px solid black;
-	width: 60%;
-	height: 105px;
-	display: flex;
-	justify-content: space-around;
-	font-size: 12px;
-}
-.curso-titulo {
+
+.contenedor-2 {
+	width: 100%;
+	background-color: white;
+.menu {
 	width: 100%;
 	display: flex;
-	align-items: center;
 	justify-content: space-between;
 }
-.curso-contenido {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-.lista-cursos {
-	display: flex;
-	flex-direction: column;
-	padding-bottom: 30px;
