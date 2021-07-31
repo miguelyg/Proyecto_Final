@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap');
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	font-size: 16px;
+	font-family: 'Poppins', sans-serif;
+	/* font-family: 'Roboto', sans-serif; */
+}
+
+li {
+	list-style: none;
+}
+.fondo {
+	background: url(../img/fondo.png);
+	width: 100%;
+	height: 100vh;
+	background-size: cover;
+	display: flex;
+	display: grid;
+	grid-template-columns: 30% 40% 30%;
+	grid-template-rows: repeat(4, 1fr);
+	overflow: hidden;
+}
+.contenedor {
+	margin: 0 auto;
+	width: 100%;
+	height: 100vh;
+	display: grid;
+	grid-column: 1/2;
+	grid-row: 1/5;
+}
+.header {
+	width: 210px;
+	height: 20%;
+	padding-top: 10px;
+	padding-left: 20px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-size: 14px;
+	color: white;
+}
+.marcas {
+	width: 320px;
+	height: 88%;
+	color: white;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: flex-end;
+}
+.main {
+	width: 100%;
+	height: 100%;
+	text-align: right;
+	color: white;
+	display: grid;
+	grid-column: 2;
+	grid-row: 2/3;
+}
+.titulo {
+	height: 800px;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.subtitulo {
+	padding-top: 20px;
+	font-size: 1.5rem;
+}
+
+.contenedor-2 {
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	display: grid;
+	grid-column: 3/-1;
+	grid-row: 1/5;
+}
+.menu {
+	width: 100%;
+	height: 80px;
+	display: flex;
+	justify-content: space-around;
+	align-self: center;
+}
+
+.form {
+	width: 100%;
+	min-width: 375px;
+	height: 100%;
+	padding-bottom: 30%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 15px;
+	text-align: center;
+}
+.sesion {
+	height: 100%;
+	width: 100%;
+	margin-bottom: px;
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+	justify-content: space-between;
+}
+.registrarse {
+	display: flex;
+	flex-direction: column;
+}
+.input-nombre,
+.input-contrasena,
+.input-correo,
+.input-repite-contrasena,
+.form-boton {
+	width: 70%;
+	height: 50px;
+	margin-bottom: 20px;
+	border: solid 1px;
+	border-radius: 5px;
+	padding-left: 10px;
+}
+
+.form-boton {
+	background-color: #5640ff;
+	border: 0;
+	align-self: center;
+	padding: 20px;
+}
+
+.form-boton a {
+	color: white;
+	font-size: 16px;
+	text-decoration: none;
+}
