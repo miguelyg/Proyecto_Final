@@ -1,0 +1,442 @@
+
+/* @font-face {
+    font-family: 'robotoregular';
+    src: url('./fonts/roboto/roboto-regular-webfont.woff2') format('woff2'),
+         url('./fonts/roboto/roboto-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+} */
+@font-face {
+    font-family: 'robotolight';
+    src: url('./fonts/roboto/roboto-light-webfont.woff2') format('woff2'),
+         url('./fonts/roboto/roboto-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'robotobold';
+    src: url('./fonts/roboto_bold/roboto-bold-webfont.woff2') format('woff2'),
+         url('./fonts/roboto_bold/roboto-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'poppinslight';
+    src: url('./fonts/popin/poppins-light-webfont.woff2') format('woff2'),
+         url('./fonts/popin/poppins-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'poppinsbold';
+    src: url('./fonts/popin_bold/poppins-bold-webfont.woff2') format('woff2'),
+         url('./fonts/popin_bold/poppins-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/* @font-face {
+    font-family: 'poppinsregular';
+    src: url('./fonts/popin/poppins-regular-webfont.woff2') format('woff2'),
+         url('./fonts/popin/poppins-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+} */
+
+
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'robotolight','robotobold','poppinslight','poppinsbold';
+	padding: 0;
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+a {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	color: white;
+	font-size: 1.2em;
+	text-transform: uppercase;
+}
+
+.container{
+	width: 70%;
+	margin: 0 auto;
+}
+.header{
+	display: block;
+	background-image: url('./images/fondo.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+    height: calc(100vh - 200px);
+	width: 100%;
+}
+.header_navegacion{
+	display: flex;
+	flex-direction: row;
+	height: 100px;
+}
+.navegacion_logo{
+	flex: auto;
+}
+.opcion_logo{
+	height: 100px;
+	padding-top: 10px;
+}
+.navegacion_opciones{
+	display: flex;
+	flex-direction: row;
+	width: 5rem;
+}
+.opciones_carrito{
+	flex: auto;
+	padding-top: 10px;
+}
+.opciones_menu{
+	flex: auto;
+	padding-top: 10px;
+}
+.header_banner
+{
+	color: #fff;
+	display: flex;
+    align-items: center;
+    justify-content: start;
+    text-align: left;
+    width: 100%;
+    
+    /* restamos la base de logos y el nav */
+    height: calc(100vh - 300px);
+}
+
+.header_banner h1{
+	font-size: 3.5em;
+	width: 800px;
+	font-weight: 900;
+}
+
+.header_redes{
+	padding-top: 50px;
+	display: flex;
+	width: 100%;
+	height: 200px;
+}
+.redes_logos
+{
+	width: 500px;
+}
+
+.redes_scroll
+{
+	padding-top: 20px;
+	flex: auto;
+	cursor: pointer;
+}
+.redes_scroll img:hover
+{ 
+	position: relative; 
+	top: -5px;
+} 
+
+.fono_form
+{
+	position: fixed;
+	width: 500px;
+	min-height: 900px;	
+	padding-top: 150px;
+	padding-right: 100px;
+	padding-left: 100px;
+	background-image: url('./images/fono.png');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	z-index: 999;
+	right: 15em;
+	top: 3em;
+}
+.fono_form div
+{
+	padding-bottom: 30px;
+}
+
+.redes_fono p
+{
+	padding-bottom: 20px;
+	width: 100%;
+	font-weight: 100;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+.redes_fono input[type='text']
+{
+	width: 100%;
+	height: 70px;
+	border: 1px solid #555;
+	border-radius: 4px;
+}
+
+.redes_fono input[type='checkbox']
+{
+	height: 20px;
+	width: 20px;
+	border: 2px solid black;
+}
+
+.redes_fono input[type='button']
+{
+	width: 100%;
+	height: 70px;
+	border: 1px solid #555;
+	border-radius: 4px;
+	background-color: #5640ff;
+	color: #fff;
+	font-size: 1em;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.redes_fono select
+{
+	width: 100%;
+	height: 70px;
+}
+
+.redes_wsp {
+	width: 65px;
+	height: 65px;
+	background-image: url('./images/logo_wsp.svg');
+	background-position: center;
+
+	position: fixed;
+	right: 4em;
+	bottom: 3em;
+}
+.listado
+{
+	display: block;
+	padding-top: 250px;
+}
+.listado_programas
+{
+	padding-top: 50px;
+	display: flex;
+}
+.programas_lista
+{
+	flex: auto;
+	display: grid;
+	grid-template-columns: repeat(2, 344px);
+	gap: 50px;
+	grid-auto-rows: minmax(320px, auto);
+}
+.programas_espacio
+{
+	flex: auto;
+}
+
+.lista_curso
+{		
+	display:flex;
+	color: white;		
+	border-radius: 20px 20px 20px 20px;
+	position: relative;
+	
+}
+.lista_curso::after
+{
+	border-radius: 20px;
+	content:'';
+	position:absolute;
+	left:0; top:0;
+	width:100%; height:100%;
+	display:inline-block;
+	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+}
+
+
+.lista_curso img
+{
+	display: block;
+	border-radius: 20px;
+}
+.lista_curso p
+{
+	position: absolute;
+	top: 210px;
+	color: white;
+	z-index: 9;
+}
+.curso_botones
+{
+	position: absolute;
+	top: 270px;
+	color: white;
+	z-index: 9;
+	background-color: transparent;
+	width: 100%;
+}
+
+.curso_botones button
+{
+	flex: auto;
+	width: 150px;
+	background-color: transparent;
+	color: white;
+	height: 30px;
+	border-style: none;
+	cursor: pointer;
+}
+.aviso
+{
+	display: block;
+	padding-top: 100px;
+}
+.aviso_contenido
+{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	width: 100%;
+	background-color: #5640ff;
+	height: 250px;
+	align-items: center;
+	color: white;
+}
+
+.aviso_contenido img
+{
+	flex: auto;
+	position: absolute;
+	left: -9em;
+}
+
+.contenido_texto
+{
+	flex: auto;
+	width: 600px;
+	font-size: 11pt;
+}
+.contenido_texto h3
+{
+	font-size: 1.1em;
+}
+
+.beneficios
+{
+	display: block;
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+.beneficios_lista
+{
+	padding-top: 50px;
+	display: grid;
+	grid-template-columns: repeat(1, 55%);
+	gap: 40px;
+	grid-auto-rows: minmax(160px, auto);
+}
+
+.beneficios_lista h3
+{
+	font-size: 1.2em;
+}
+
+.beneficio_item
+{
+	display: flex;
+	height: 160px;
+	background-color: #F8F8FA;
+	border-radius: 20px;
+	align-items: center;
+}
+
+.beneficio_item img
+{
+	padding: 40px;
+}
+.item_texto
+{
+	padding-right: 40px;
+}
+
+.item_texto h4
+{
+	font-size: 1em;
+	font-weight: 500;
+	padding-bottom: 10px;
+}
+
+.item_texto p
+{
+	font-size: 0.9em;
+}
+
+.footer
+{
+	display: block;
+	height: 20vh;
+	background-color: #000425;
+	display: flex;
+	align-items: center;
+}
+
+
+
+/* .padre {
+	width: 500px;
+	min-height: 50vh;
+	margin: 0 auto;
+	background: salmon;
+	display: flex;
+	justify-content: space-between;
+}
+
+.hijo {
+	border: 1px solid black;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+} */

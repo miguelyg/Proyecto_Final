@@ -1,30 +1,108 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+  <Header />
+  <Listado />
+  <Aviso />
+  <Beneficios />
+  <Footer />
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-#nav {
-  padding: 30px;
-}
+    @font-face {
+        font-family: 'robotolight';
+        src: url('./assets/fonts/roboto/roboto-light-webfont.woff2') format('woff2'),
+            url('./assets/fonts/roboto/roboto-light-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+    }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+    @font-face {
+        font-family: 'robotobold';
+        src: url('./assets/fonts/roboto_bold/roboto-bold-webfont.woff2') format('woff2'),
+            url('./assets/fonts/roboto_bold/roboto-bold-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+
+    }
+
+    @font-face {
+        font-family: 'poppinslight';
+        src: url('./assets/fonts/popin/poppins-light-webfont.woff2') format('woff2'),
+            url('./assets/fonts/popin/poppins-light-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+
+    }
+
+    @font-face {
+        font-family: 'poppinsbold';
+        src: url('./assets/fonts/popin_bold/poppins-bold-webfont.woff2') format('woff2'),
+            url('./assets/fonts/popin_bold/poppins-bold-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+
+    }
+
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'robotolight','robotobold','poppinslight','poppinsbold';
+        padding: 0;
+        margin: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    li,
+    a {
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.2em;
+        text-transform: uppercase;
+    }
+
+    .container{
+        width: 70%;
+        margin: 0 auto;
+    }
 </style>
+
+<script>
+// @ is an alias to /src
+import Header from '@/components/Header.vue'
+import Listado from '@/components/Listado.vue'
+import Aviso from '@/components/Aviso.vue'
+import Beneficios from '@/components/Beneficios.vue'
+import Footer from '@/components/footer.vue'
+
+export default {
+  name: 'Home',
+  components: {
+    Header,
+    Listado,
+    Aviso,
+    Beneficios,
+    Footer
+  }
+}
+</script>
