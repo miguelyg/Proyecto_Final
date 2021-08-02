@@ -8,10 +8,10 @@
                         <img src="../assets/images/cursos/curso1.png" class="curso_imagen" alt="">
                         <p>Desarrollo <br> Front-End</p> 
                         <div class="curso_botones">
-                            <button @click="agregarCarrito">
+                            <a class="boton" @click="agregarCarrito">
                                 <img src="../assets/images/carrito.svg" alt="">
-                                Carrito
-                            </button>
+                                Agregar
+                            </a>
                             <router-link class="boton" to="/detalle/1">
                                  <img src="../assets/images/mas.svg" alt="">
                                 Ver Mas
@@ -23,10 +23,10 @@
                         <img src="../assets/images/cursos/curso2.png" class="curso_imagen" alt="">
                         <p>Desarrollo <br> Back-End</p>
                         <div class="curso_botones">
-                            <button @click="agregarCarrito">
+                            <a class="boton" @click="agregarCarrito">
                                 <img src="../assets/images/carrito.svg" alt="">
-                                Carrito
-                            </button>
+                                Agregar
+                            </a>
                             <router-link class="boton" to="/detalle/1">
                                 <img src="../assets/images/mas.svg" alt="">
                                 Ver Mas
@@ -37,10 +37,10 @@
                         <img src="../assets/images/cursos/curso3.png" class="curso_imagen" alt="">
                         <p>Desarrollo de <br> Aplicaciones Móviles</p>
                         <div class="curso_botones">
-                            <button @click="agregarCarrito">
+                            <a class="boton" @click="agregarCarrito">
                                 <img src="../assets/images/carrito.svg" alt="">
-                                Carrito
-                            </button>
+                                Agregar
+                            </a>
                             <router-link class="boton" to="/detalle/1">
                                 <img src="../assets/images/mas.svg" alt="">
                                 Ver Mas
@@ -51,10 +51,10 @@
                         <img src="../assets/images/cursos/curso4.png" class="curso_imagen" alt="">
                         <p>Diseño de Experiencia de <br> Usuario</p>
                         <div class="curso_botones">
-                            <button @click="agregarCarrito">
+                            <a class="boton" @click="agregarCarrito">
                                 <img src="../assets/images/carrito.svg" alt="">
-                                Carrito
-                            </button>
+                                Agregar
+                            </a>
                             <router-link class="boton" to="/detalle/1">
                                 <img src="../assets/images/mas.svg" alt="">
                                 Ver Mas
@@ -65,10 +65,10 @@
                         <img src="../assets/images/cursos/curso5.png" class="curso_imagen" alt="">
                         <p>Desarrollo de <br> Videojuegos</p>
                         <div class="curso_botones">
-                            <button @click="agregarCarrito">
+                            <a class="boton" @click="agregarCarrito">
                                 <img src="../assets/images/carrito.svg" alt="">
-                                Carrito
-                            </button>
+                                Agregar
+                            </a>
                             <router-link class="boton" to="/detalle/1">
                                 <img src="../assets/images/mas.svg" alt="">
                                 Ver Mas
@@ -79,10 +79,10 @@
                         <img src="../assets/images/cursos/curso6.png" class="curso_imagen" alt="">
                         <p>Marketing <br> Digital</p>
                         <div class="curso_botones">
-                            <button @click="agregarCarrito">
+                            <a class="boton" @click="agregarCarrito">
                                 <img src="../assets/images/carrito.svg" alt="">
-                                Carrito
-                            </button>
+                                Agregar
+                            </a>
                             <router-link class="boton" to="/detalle/1">
                                 <img src="../assets/images/mas.svg" alt="">
                                 Ver Mas
@@ -93,10 +93,10 @@
                         <img src="../assets/images/cursos/curso7.png" class="curso_imagen" alt="">
                         <p>Data <br> Analytics</p>
                         <div class="curso_botones">
-                            <button @click="agregarCarrito">
+                            <a class="boton" @click="agregarCarrito">
                                 <img src="../assets/images/carrito.svg" alt="">
-                                Carrito
-                            </button>
+                                Agregar
+                            </a>
                             <router-link class="boton" to="/detalle/1">
                                 <img src="../assets/images/mas.svg" alt="">
                                 Ver Mas
@@ -107,10 +107,10 @@
                         <img src="../assets/images/cursos/curso8.png" class="curso_imagen" alt="">
                         <p>Desarrollo <br> Front-End Avanzando</p>
                         <div class="curso_botones">
-                            <button @click="agregarCarrito(event)">
+                            <a class="boton" @click="agregarCarrito">
                                 <img src="../assets/images/carrito.svg" alt="">
-                                Carrito
-                            </button>                            
+                                Agregar
+                            </a>                            
                             <router-link class="boton" to="/detalle/1">
                                 <img src="../assets/images/mas.svg" alt="">
                                 Ver Mas
@@ -126,14 +126,13 @@
 </template>
 
 <script>
-import {mapActions} from 'vuex'
-import {mapState} from 'vuex';
+import { mapState, mapActions } from 'vuex';
 export default {
     computed:{
         ...mapState(['cursos','carritoContador']),
     },
     methods:{
-        ...mapActions(['getCursosAction']),       
+        ...mapActions(['getCursosAction','agregarCarrito']),       
     },
     created(){
         this.getCursosAction();
@@ -229,15 +228,17 @@ export default {
 	z-index: 9;
 	background-color: transparent;
 	width: 100%;
+    padding-left:10px;
+    padding-right:10px;
 }
 
-.curso_botones button,a
+.curso_botones a
 {
 	flex: auto;
     display: flex;
 	background-color: transparent;
 	color: white;
-	height: 30px;
+	height: 40px;
 	border-style: none;
 	cursor: pointer;
     justify-content: center;
@@ -246,7 +247,17 @@ export default {
     font-weight: 900;
     text-transform: capitalize;
     text-align: center;
+    padding:10px;
+    border-radius: 10px;
 }
+
+.curso_botones a:hover
+{
+    border-color: #5640ff;
+	border-style: solid;
+    background-color: #5640ff;
+}
+
 
 @media (max-height: 680px), screen and (orientation: portrait) 
 { 

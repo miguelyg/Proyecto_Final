@@ -1,14 +1,14 @@
 <template>
-  <header class="fondo">
-			<div class="contenedor">
+<header class="fondo">
+			<div class="contenedor ">
 				<div class="header">
 					<div><img src="../assets/images/other/icon-pachaqtec.svg" alt="" /></div>
-					<div>
+					<div class="tipografia">
 						<img src="../assets/images/other/pachaqtec.svg" alt="" />
-						<p>ESCUELA DE CODING</p>
+						<p class="tipo">ESCUELA DE CODING</p>
 					</div>
 				</div>
-				<nav>
+				<nav class="menu">
 					<ul class="botones">
 						<li>
 							<a href=""> <img src="../assets/images/other/carrito.svg" alt="carrito" /></a>
@@ -20,79 +20,80 @@
 				</nav>
 			</div>
 		</header>
-		<div class="contenedor">
-			<div class="Carrito">
-                <router-link class="boton" to="/">
-                    <img src="../assets/images/other/arrow.svg" alt="flecha" />
-                </router-link>	
-				
-				<h2>Carrito de compras</h2>
+		<section class="contenedor content-mobile fondo ">
+			<div class="carrito">
+					<div>
+						<router-link class="boton" to="/">
+							<p class="carrito-flecha"></p>
+						</router-link>                      
+                    </div>
+					<div class="carrito-titulo">
+						<h2>Carrito de compras</h2>
+					</div>
 			</div>
-		</div>
-		<div class="contenedor-2">
-			<div class="Cursos">
-				<div class="Curso">
-					<div class="Curso-Imagen">
-						<img src="../assets/images/other/curso.png" alt="" />
-					</div>
-					<div class="Curso-Info">
-						<h3>Gestión de Envases, Empaques y Embalajes</h3>
-						<p>Dto.25%</p>
-						<a href="#">Eliminar</a>
-					</div>
-					<div class="Curso-Precio">
-						<p>S/269</p>
-					</div>
-				</div>
-				<div class="Curso">
-					<div class="Curso-Imagen">
-						<img src="../assets/images/other/curso.png" alt="" />
-					</div>
-					<div class="Curso-Info">
-						<h3>Gestión de Envases, Empaques y Embalajes</h3>
-						<p>Dto.25%</p>
-						<a href="#">Eliminar</a>
-					</div>
-					<div class="Curso-Precio">
-						<p>S/279</p>
-					</div>
-				</div>
-				<div class="Curso">
-					<div class="Curso-Imagen">
-						<img src="../assets/images/other/curso.png" alt="" />
-					</div>
-					<div class="Curso-Info">
-						<h3>Gestión de Envases, Empaques y Embalajes</h3>
-						<p>Dto.25%</p>
-						<a href="#">Eliminar</a>
-					</div>
-					<div class="Curso-Precio">
-						<p>S/279</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="Subtotal">
-				<div class="Subtotal-Texto">
-					<h3>Subtotal</h3>
-					<p>S/.600</p>
-				</div>
-				<div class="Subtotal-Input">
-					<input
-						class="Input"
-						type="text"
-						placeholder="Agregar código del descuento"
-					/>
-					<a href="#"><img src="../assets/images/other/send.svg" alt="enviar" /></a>
-				</div>
-				<div class="Boton-Continuar">
-					<a class="Continuar" href="#">Continuar</a>
-				</div>
-			</div>
-		</div>
-        <div>
-            <br>
-        </div>
+		</section>
+        <main class="contenedor"> 
+            <section class="cursos">
+                <div class="row curso">
+                    <div class="curso-img">
+                        <img src="../assets/images/other/curso.png" alt="">
+                    </div>
+                    <div class="curso-info">
+                        <h3 class="curso-titulo">Gestión de Envases, Empaques y Embalajes</h3>
+						<p class="dscto">Dto.25%</p>
+						<a class="eliminar" href="#">Eliminar</a>
+                    </div>
+                    <div >
+                        <p class="curso-precio"> S/269</p>
+                    </div>
+                </div>
+                <div class="row curso">
+                    <div class="curso-img">
+                        <img src="../assets/images/other/curso.png" alt="">
+                    </div>
+                    <div class="curso-info">
+                        <h3 class="curso-titulo">Gestión de Envases, Empaques y Embalajes</h3>
+						<p class="dscto">Dto.25%</p>
+						<a class="eliminar" href="#">Eliminar</a>
+                    </div>
+                    <div class="curso-precio">
+                        <p>S/269</p>
+                    </div>
+                </div>
+                <div class="row curso">
+                    <div class="curso-img">
+                        <img src="../assets/images/other/curso.png" alt="">
+                    </div>
+                    <div class="curso-info">
+                        <h3 class="curso-titulo">Gestión de Envases, Empaques y Embalajes</h3>
+						<p class="dscto">Dto.25%</p>
+						<a class="eliminar" href="#">Eliminar</a>
+                    </div>
+                    <div class="curso-precio">
+                        <p>S/269</p>
+                    </div>
+                </div>
+            </section>
+            <section class="compra">
+                <div class=" subtotal">
+                    <div class="compra-box">
+                        <h3 class="sub-titulo">Subtotal</h3>
+                        <p class="sub-precio">S/.600</p>
+                    </div>
+                    <div class="descuento">
+                        <input
+                            class="descuento-input"
+                            type="text"
+                            placeholder="Agregar código del descuento"
+                        />
+                        <a href="#"><img src="../assets/images/other/send.svg" alt="enviar" /></a>
+                    </div>
+                    <div class="btn-continuar">
+                        <a class="continuar" href="#">Continuar</a>
+                    </div>
+                </div>
+            </section>
+        </main>
 </template>
 
 <script>
@@ -121,27 +122,54 @@ li {
 	list-style: none;
 }
 .fondo {
-	background-color: black;
-	width: 100%;
+	background-color: #000425;
 	color: white;
+	width: 100%;
 }
+
 .contenedor {
 	margin: 0 auto;
 	width: 90%;
-	height: 60px;
+	max-width: 1024px;
 	display: flex;
 	justify-content: space-between;
 }
-
 .header {
-	width: 180px;
-	height: 100%;
-
+	width: 184px;
+	height: 60px;
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
-
+}
+.tipografia {
+	height: 35px;
+	margin-left: 8px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.tipo {
+	font-family: 'Poppins', sans-serif;
 	font-size: 14px;
+}
+.carrito {
+	background-color: white;
+	color: #222222;
+	/* border: 1px solid black; */
+	width: 100%;
+	height: 100px;
+	font-size: 0.9rem;
+	font-weight: bold;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.carrito-flecha {
+	width: 17px;
+	height: 18px;
+	background-image: url(../assets/images/other/arrow.svg);
+}
+.carrito-titulo {
+	margin-left: 15px;
 }
 .botones {
 	width: 100px;
@@ -150,81 +178,103 @@ li {
 	justify-content: space-around;
 	align-items: center;
 }
-.Carrito {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	width: 250px;
-	font-size: 14px;
-}
 
-.Cursos {
-	width: 52%;
-	min-height: 300px;
-	height: 100%;
+/* Cursos*/
+.cursos {
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+	width: 55%;
+	height: auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	align-items: center;
 }
-
-.Curso {
+.curso {
 	width: 100%;
-	height: 120px;
-	padding-bottom: 20px;
+	height: 100px;
+	margin-bottom: 20px;
 	display: flex;
-	justify-content: space-around;
+	justify-content: flex-start;
+	position: relative;
 }
-.Curso-Info {
+.curso-info {
+	margin-left: 15px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	text-align: left;
 }
-.contenedor-2 {
-	margin: 0 auto;
-	width: 90%;
-	height: 60px;
-	display: flex;
-	justify-content: space-between;
+.curso-titulo {
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+	font-size: 16px;
 }
-
-.Subtotal {
-	height: 283px;
-	width: 433px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	align-items: center;
-	width: 40%;
-	background-color: white;
-}
-.Subtotal-Texto {
-	width: 80%;
-	display: flex;
-	justify-content: space-around;
-	font-size: 20px;
+.dscto {
+	font-size: 14px;
 	color: #5640ff;
 }
-.Subtotal-Input {
+.eliminar {
+	font-family: 'Poppins', sans-serif;
+	font-size: 12px;
+	color: #5640ff;
+}
+.curso-precio {
+	margin-left: 20px;
+	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+}
+/*Compra*/
+.compra {
+	background-color: white;
+	box-shadow: 0px 0px 5px 1px rgb(224, 221, 221);
+	width: 42%;
+	height: 283px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.subtotal {
+	width: 80%;
+	height: 70%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.compra-box {
+	display: flex;
+	justify-content: space-between;
+}
+
+.sub-titulo,
+.sub-precio {
+	font-family: 'Poppins', sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	color: #5640ff;
+}
+
+.descuento {
 	width: 333px;
 	height: 50px;
 	border: 1px solid black;
+	border-radius: 5px;
 	display: flex;
-	justify-content: space-around;
+	justify-content: flex-start;
 	align-items: center;
 }
-.Input {
-	width: 70%;
+.descuento-input {
+	width: 90%;
 	height: 100%;
 	border: white 1px solid;
+	text-align: center;
 }
 .Input:focus,
 .Input:active {
 	outline: none;
 	border: 0;
 }
-.Boton-Continuar {
+.btn-continuar {
 	width: 333px;
 	height: 50px;
 	background-color: #5640ff;
@@ -233,8 +283,146 @@ li {
 	justify-content: center;
 	align-items: center;
 }
-.Continuar {
+.continuar {
 	text-decoration: none;
 	color: white;
+}
+
+/* Media Queries*/
+@media screen and (max-width: 768px) {
+
+	.carrito {
+		background-color: #f8f8fa;
+	}
+
+	.contenedor {
+		width: 90%;
+		height: auto;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	.cursos {
+		width: 80%;
+	}
+	.curso-info {
+		margin-left: 5px;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.curso-titulo {
+		font-size: 12px;
+	}
+
+	.dscto {
+		font-size: 14px;
+		color: #5640ff;
+	}
+	.eliminar {
+		font-family: 'Poppins', sans-serif;
+		font-size: 12px;
+		color: #5640ff;
+	}
+	.curso-precio {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		font-family: 'Poppins', sans-serif;
+		font-size: 12px;
+	}
+	.compra {
+		width: 433px;
+		height: 283px;
+	}
+	.descuento {
+		width: 100%;
+	}
+	.btn-continuar {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 425px) {
+
+	.carrito {
+		background-color: #f8f8fa;
+	}
+
+	.contenedor {
+		width: 90%;
+		height: auto;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin-bottom: 30px;
+	}
+	.content-mobile {
+		width: 100%;
+	}
+	header {
+		display: none;
+	}
+	.carrito {
+		background-color: #000425;
+		width: 90%;
+		height: 50px;
+	}
+	.carrito-flecha {
+		width: 15px;
+		height: 13px;
+		background-image: url(../assets/images/other/arrow-white.svg);
+	}
+	.carrito-titulo h2 {
+		color: white;
+		font-family: 'Poppins', sans-serif;
+		font-size: 14px;
+		font-weight: bold;
+	}
+	.cursos {
+		width: 100%;
+		height: auto;
+		margin-bottom: 30px;
+	}
+	.curso {
+		width: 100%;
+		margin-top: 10px;
+		position: relative;
+	}
+	.curso-info {
+		margin-left: 10px;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.curso-titulo {
+		font-size: 12px;
+	}
+
+	.dscto {
+		font-size: 14px;
+		color: #5640ff;
+	}
+	.eliminar {
+		font-family: 'Poppins', sans-serif;
+		font-size: 12px;
+		color: #5640ff;
+	}
+	.curso-precio {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		font-family: 'Poppins', sans-serif;
+		font-size: 12px;
+	}
+	.compra {
+		width: 100%;
+		height: 283px;
+	}
+
+	.descuento {
+		width: 90%;
+	}
+	.btn-continuar {
+		width: 90%;
+	}
 }
 </style>

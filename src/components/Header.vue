@@ -114,9 +114,23 @@ export default {
 	width: 5rem;
 }
 .opciones_carrito{
-	flex: auto;
+	width: 5rem;
 	padding-top: 10px;
 }
+
+
+.opciones_carrito label
+{
+	position: absolute;
+	background-color: #5640ff;
+	border-radius: 50%;
+	border-style: solid;
+	border-color: #5640ff;
+	border-width: 5px;
+	font-size: 7pt;
+	cursor: pointer;
+}
+
 .opciones_menu{
 	flex: auto;
 	padding-top: 10px;

@@ -5,7 +5,7 @@ export default createStore({
     curso:{},
     cursos:[],
     carrito:[],
-    carritoContador:0
+    carritoContador:0,
   },
   mutations: {
     getCursosMutation(state,payload){
@@ -16,7 +16,6 @@ export default createStore({
     },
     agregarCarrito(state){
       state.carritoContador++;
-      console.log(this.carritoContador);
     }
   },
   actions: {
@@ -36,7 +35,7 @@ export default createStore({
     },
     agregarCarrito({commit}){
       // match con mutacion
-      commit('setTareMutation');
+      commit('agregarCarrito');
     }
   },
   modules: {
