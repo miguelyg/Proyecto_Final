@@ -56,8 +56,9 @@ export default {
 	grid-auto-rows: minmax(160px, auto);
 }
 
-.beneficios_lista h3
+.beneficios_contenido h3
 {
+    font-family: 'poppinsregular';
 	font-size: 1.2em;
 }
 
@@ -81,13 +82,33 @@ export default {
 
 .item_texto h4
 {
-	font-size: 1em;
+    font-family: 'poppinslight';
+	font-size: 0.9em;
 	font-weight: 500;
 	padding-bottom: 10px;
 }
 
 .item_texto p
 {
-	font-size: 0.9em;
+	font-size: 0.8em;
 }
+
+
+@media (max-height: 680px), screen and (orientation: portrait) 
+{ 
+
+    .beneficios_lista
+    {
+        padding-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(1, 100%);
+        gap: 40px;
+        grid-auto-rows: minmax(160px, auto);
+    }
+
+}
+
+
+
+
 </style>

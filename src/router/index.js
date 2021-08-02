@@ -7,7 +7,7 @@ import Register from '../views/Register.vue'
 
 const routes = [
   {
-    path: '/detalle',
+    path: '/detalle/:id',
     name: 'Detalle',
     component: Detalle
   },

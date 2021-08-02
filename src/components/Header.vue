@@ -11,6 +11,7 @@
                     <li class="opciones_carrito">
 						<router-link class="boton" to="/miscompras">
 							<img src="../assets/images/carrito.svg" alt="">
+							<label for="">{{carritoContador}}</label>
 						</router-link>	                        
                     </li>
                     <li class="opciones_menu">
@@ -24,6 +25,7 @@
             </nav>
             <section class="header_banner">
                 <h1>¡Explota todo tu potencial tecnológico!</h1>
+				<p>Con nuestros programas de especialización</p>
             </section>
             <section class="header_redes">
                 <div class="redes_logos">
@@ -34,9 +36,9 @@
                 </div>
                 <div class="redes_fono">
                     <form action="" class="fono_form">
-                        <p>
-                            Postula y obtén un 10% de descuento en el programa
-                        </p>
+						<p>
+							Postula y obtén un 10% de descuento en el programa
+						</p>
                         <div>
                             <input type="text" placeholder="NOMBRE">
                         </div>
@@ -65,8 +67,11 @@
 </template>
 
 <script>
-export default {
-
+import {mapState} from 'vuex';
+export default {	
+    computed:{
+        ...mapState(['carritoContador']),
+    },
 }
 </script>
 
@@ -97,6 +102,12 @@ export default {
 	height: 100px;
 	padding-top: 10px;
 }
+
+.opcion_logo img{
+	width: 184.28px;
+	height: 32px;
+}
+
 .navegacion_opciones{
 	display: flex;
 	flex-direction: row;
@@ -112,10 +123,12 @@ export default {
 }
 .header_banner
 {
+	font-family: 'robotobold','poppinsbold';
 	color: #fff;
 	display: flex;
-    align-items: center;
-    justify-content: start;
+	flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
     text-align: left;
     width: 100%;
     
@@ -125,8 +138,16 @@ export default {
 
 .header_banner h1{
 	font-size: 3.5em;
-	width: 800px;
+	width: 50%;
 	font-weight: 900;
+}
+
+.header_banner p
+{
+	padding-top: 30px;
+	font-family: 'poppinslight';
+	font-size: 13pt;
+	font-weight: 600;
 }
 
 .header_redes{
@@ -152,55 +173,69 @@ export default {
 	top: -5px;
 } 
 
+.redes_fono
+{
+	width: 370px;
+	height: 900px;
+	background-image: url('../assets/images/fono.svg'); 
+	background-position: center;
+	background-repeat: no-repeat;
+	position: fixed;
+	right: 8em;
+	bottom: -8em;
+
+}
+
 .fono_form
 {
+	width: 370px;
 	position: fixed;
-	width: 500px;
-	min-height: 900px;	
-	padding-top: 150px;
-	padding-right: 100px;
-	padding-left: 100px;
-	background-image: url('../assets/images/fono.png');
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	z-index: 999;
-	right: 15em;
-	top: 3em;
+	right: 3.2em;
+	bottom: 6em;
 }
+
 .fono_form div
 {
-	padding-bottom: 30px;
+	padding-bottom: 15px;
 }
+
+.fono_form label
+{
+	width: 186px;
+	height: 16px;
+	font-size: 9pt;
+}
+
 
 .redes_fono p
 {
-	padding-bottom: 20px;
-	width: 100%;
+	padding-bottom: 60px;
+	width: 193px;
+	height: 42px;
 	font-weight: 100;
-	font-size: 1.5em;
+	font-size: 1em;
 	text-align: center;
 }
 
 .redes_fono input[type='text']
 {
-	width: 100%;
-	height: 70px;
+	width: 216px;
+	padding-right: 20px;
+	padding-left: 20px;
+	height: 50px;
 	border: 1px solid #555;
 	border-radius: 4px;
 }
 
 .redes_fono input[type='checkbox']
 {
-	height: 20px;
-	width: 20px;
 	border: 2px solid black;
 }
 
 .redes_fono input[type='button']
 {
-	width: 100%;
-	height: 70px;
+	width: 216px;
+	height: 50px;
 	border: 1px solid #555;
 	border-radius: 4px;
 	background-color: #5640ff;
@@ -212,8 +247,10 @@ export default {
 
 .redes_fono select
 {
-	width: 100%;
-	height: 70px;
+	width: 216px;
+	padding-right: 20px;
+	padding-left: 20px;
+	height: 50px;
 }
 
 .redes_wsp {
@@ -221,9 +258,24 @@ export default {
 	height: 65px;
 	background-image: url('../assets/images/logo_wsp.svg');
 	background-position: center;
-
+	z-index: 9999;
 	position: fixed;
 	right: 4em;
 	bottom: 3em;
 }
+
+@media (max-height: 680px), screen and (orientation: portrait) 
+{ 
+
+.redes_fono
+{
+	display: none;
+
+}
+
+
+
+
+}
+
 </style>

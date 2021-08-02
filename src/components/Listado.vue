@@ -5,68 +5,116 @@
             <div class="listado_programas">
                 <div class="programas_lista">
                     <div class="lista_curso">
-                        <img src="../assets/images/cursos/curso1.png" alt="">
-                        <p>Desarrollo Front-End</p>
+                        <img src="../assets/images/cursos/curso1.png" class="curso_imagen" alt="">
+                        <p>Desarrollo <br> Front-End</p> 
                         <div class="curso_botones">
-                            <button>Carrito</button>
-                            <router-link class="boton" to="/detalle">Ver Mas</router-link>
+                            <button @click="agregarCarrito">
+                                <img src="../assets/images/carrito.svg" alt="">
+                                Carrito
+                            </button>
+                            <router-link class="boton" to="/detalle/1">
+                                 <img src="../assets/images/mas.svg" alt="">
+                                Ver Mas
+                            </router-link>
                         </div>
                     
                     </div>
                     <div class="lista_curso">
-                        <img src="../assets/images/cursos/curso2.png" alt="">
-                        <p>Desarrollo Front-End</p>
+                        <img src="../assets/images/cursos/curso2.png" class="curso_imagen" alt="">
+                        <p>Desarrollo <br> Back-End</p>
                         <div class="curso_botones">
-                            <button>Carrito</button>
-                            <router-link class="boton" to="/detalle">Ver Mas</router-link>
+                            <button @click="agregarCarrito">
+                                <img src="../assets/images/carrito.svg" alt="">
+                                Carrito
+                            </button>
+                            <router-link class="boton" to="/detalle/1">
+                                <img src="../assets/images/mas.svg" alt="">
+                                Ver Mas
+                            </router-link>
                         </div>
                     </div>
                     <div class="lista_curso">
-                        <img src="../assets/images/cursos/curso3.png" alt="">
-                        <p>Desarrollo Front-End</p>
+                        <img src="../assets/images/cursos/curso3.png" class="curso_imagen" alt="">
+                        <p>Desarrollo de <br> Aplicaciones Móviles</p>
                         <div class="curso_botones">
-                            <button>Carrito</button>
-                            <router-link class="boton" to="/detalle">Ver Mas</router-link>
+                            <button @click="agregarCarrito">
+                                <img src="../assets/images/carrito.svg" alt="">
+                                Carrito
+                            </button>
+                            <router-link class="boton" to="/detalle/1">
+                                <img src="../assets/images/mas.svg" alt="">
+                                Ver Mas
+                            </router-link>
                         </div>
                     </div>
                     <div class="lista_curso">
-                        <img src="../assets/images/cursos/curso4.png" alt="">
-                        <p>Desarrollo Front-End</p>
+                        <img src="../assets/images/cursos/curso4.png" class="curso_imagen" alt="">
+                        <p>Diseño de Experiencia de <br> Usuario</p>
                         <div class="curso_botones">
-                            <button>Carrito</button>
-                            <router-link class="boton" to="/detalle">Ver Mas</router-link>
+                            <button @click="agregarCarrito">
+                                <img src="../assets/images/carrito.svg" alt="">
+                                Carrito
+                            </button>
+                            <router-link class="boton" to="/detalle/1">
+                                <img src="../assets/images/mas.svg" alt="">
+                                Ver Mas
+                            </router-link>
                         </div>
                     </div>
                     <div class="lista_curso">
-                        <img src="../assets/images/cursos/curso5.png" alt="">
-                        <p>Desarrollo Front-End</p>
+                        <img src="../assets/images/cursos/curso5.png" class="curso_imagen" alt="">
+                        <p>Desarrollo de <br> Videojuegos</p>
                         <div class="curso_botones">
-                            <button>Carrito</button>
-                            <router-link class="boton" to="/detalle">Ver Mas</router-link>
+                            <button @click="agregarCarrito">
+                                <img src="../assets/images/carrito.svg" alt="">
+                                Carrito
+                            </button>
+                            <router-link class="boton" to="/detalle/1">
+                                <img src="../assets/images/mas.svg" alt="">
+                                Ver Mas
+                            </router-link>
                         </div>
                     </div>
                     <div class="lista_curso">
-                        <img src="../assets/images/cursos/curso6.png" alt="">
-                        <p>Desarrollo Front-End</p>
+                        <img src="../assets/images/cursos/curso6.png" class="curso_imagen" alt="">
+                        <p>Marketing <br> Digital</p>
                         <div class="curso_botones">
-                            <button>Carrito</button>
-                            <router-link class="boton" to="/detalle">Ver Mas</router-link>
+                            <button @click="agregarCarrito">
+                                <img src="../assets/images/carrito.svg" alt="">
+                                Carrito
+                            </button>
+                            <router-link class="boton" to="/detalle/1">
+                                <img src="../assets/images/mas.svg" alt="">
+                                Ver Mas
+                            </router-link>
                         </div>
                     </div>     
                     <div class="lista_curso">
-                        <img src="../assets/images/cursos/curso7.png" alt="">
-                        <p>Desarrollo Front-End</p>
+                        <img src="../assets/images/cursos/curso7.png" class="curso_imagen" alt="">
+                        <p>Data <br> Analytics</p>
                         <div class="curso_botones">
-                            <button>Carrito</button>
-                            <router-link class="boton" to="/detalle">Ver Mas</router-link>
+                            <button @click="agregarCarrito">
+                                <img src="../assets/images/carrito.svg" alt="">
+                                Carrito
+                            </button>
+                            <router-link class="boton" to="/detalle/1">
+                                <img src="../assets/images/mas.svg" alt="">
+                                Ver Mas
+                            </router-link>
                         </div>
                     </div>  
                     <div class="lista_curso">
-                        <img src="../assets/images/cursos/curso8.png" alt="">
-                        <p>Desarrollo Front-End</p>
+                        <img src="../assets/images/cursos/curso8.png" class="curso_imagen" alt="">
+                        <p>Desarrollo <br> Front-End Avanzando</p>
                         <div class="curso_botones">
-                            <button>Carrito</button>
-                            <router-link class="boton" to="/detalle">Ver Mas</router-link>
+                            <button @click="agregarCarrito(event)">
+                                <img src="../assets/images/carrito.svg" alt="">
+                                Carrito
+                            </button>                            
+                            <router-link class="boton" to="/detalle/1">
+                                <img src="../assets/images/mas.svg" alt="">
+                                Ver Mas
+                            </router-link>
                         </div>
                     </div>                 
                 </div>
@@ -78,9 +126,22 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex'
+import {mapState} from 'vuex';
 export default {
+    computed:{
+        ...mapState(['cursos','carritoContador']),
+    },
+    methods:{
+        ...mapActions(['getCursosAction']),       
+    },
+    created(){
+        this.getCursosAction();
+    },
+};
 
-}
+
+
 </script>
 
 <style scoped>
@@ -89,12 +150,13 @@ export default {
 	display: block;
 	padding-top: 250px;
 }
-.boton 
+
+.listado h2
 {
-    font-size: 10pt;
-    font-weight: 900;
-    text-transform: capitalize;
+    font-size: 13pt;
+    font-family: 'robotobold';
 }
+
 .listado_programas
 {
 	padding-top: 50px;
@@ -117,43 +179,51 @@ export default {
 {		
 	display:flex;
 	color: white;		
-	border-radius: 20px 20px 20px 20px;
+	border-radius: 10px 10px 10px 10px;
 	position: relative;
 	
 }
 .lista_curso::after
 {
-	border-radius: 20px;
+	border-radius: 10px;
 	content:'';
 	position:absolute;
 	left:0; top:0;
-	width:100%; height:100%;
+	width:100%; 
+    height:100%;
 	display:inline-block;
-	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* IE10+ */
-	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.90), transparent);
+    z-index: 2;
+}
+
+.curso_imagen
+{
+    width: 100%;
 }
 
 
 .lista_curso img
 {
 	display: block;
-	border-radius: 20px;
+	border-radius: 10px 10px 10px 10px;
+    z-index: 1;
 }
 .lista_curso p
 {
+    font-family: 'roboto';
+    top: 50%;
+    padding: 25px;
+    width: 300px;
 	position: absolute;
-	top: 210px;
 	color: white;
 	z-index: 9;
+    font-size: 14pt;
 }
 .curso_botones
 {
-	position: absolute;
+    position: absolute;
+	display: flex;
+    flex-direction: row;
 	top: 270px;
 	color: white;
 	z-index: 9;
@@ -161,14 +231,40 @@ export default {
 	width: 100%;
 }
 
-.curso_botones button
+.curso_botones button,a
 {
 	flex: auto;
-	width: 150px;
+    display: flex;
 	background-color: transparent;
 	color: white;
 	height: 30px;
 	border-style: none;
 	cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    font-size: 10pt;
+    font-weight: 900;
+    text-transform: capitalize;
+    text-align: center;
 }
+
+@media (max-height: 680px), screen and (orientation: portrait) 
+{ 
+
+.programas_lista
+{
+	flex: auto;
+	display: grid;
+	grid-template-columns: repeat(1, 100%);
+	gap: 50px;
+	grid-auto-rows: minmax(320px, auto);
+    padding-left: 50px;
+}
+
+
+
+}
+
+
+
 </style>

@@ -29,7 +29,7 @@ export default {
 .aviso
 {
 	display: block;
-	padding-top: 100px;
+	padding-top: 160px;
 }
 .aviso_contenido
 {
@@ -38,7 +38,8 @@ export default {
 	flex-direction: row;
 	width: 100%;
 	background-color: #5640ff;
-	height: 250px;
+    background-image: url('../assets/images/aviso_fondo.svg');
+	height: 280px;
 	align-items: center;
 	color: white;
 }
@@ -47,17 +48,36 @@ export default {
 {
 	flex: auto;
 	position: absolute;
-	left: -9em;
+	left: -7em;
 }
 
 .contenido_texto
-{
+{    
+    font-family: 'roboto';
 	flex: auto;
-	width: 600px;
-	font-size: 11pt;
+	width: 63%;
+    padding-left: 190px;
+	font-size: 10pt;
 }
 .contenido_texto h3
 {
-	font-size: 1.1em;
+    font-family: 'robotobold','poppinsbold';
+	font-size: 1.4em;
 }
+
+@media (max-height: 680px), screen and (orientation: portrait) 
+{ 
+
+.contenido_texto
+{    
+
+
+	width: 100%;
+
+}
+
+}
+
+
+
 </style>

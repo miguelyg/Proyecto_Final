@@ -42,6 +42,24 @@
 
     }
 
+    @font-face {
+        font-family: 'poppinsregular';
+        src: url('./assets/fonts/popin/poppins-regular-webfont.woff2') format('woff2'),
+            url('./assets/fonts/popin/poppins-regular-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+
+    }
+
+    @font-face {
+        font-family: 'robotoregular';
+        src: url('./assets/fonts/roboto/roboto-regular-webfont.woff2') format('woff2'),
+            url('./assets/fonts/roboto/roboto-regular-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+
+    }
+
 
     *,
     *::before,
@@ -80,7 +98,7 @@
     }
 
     .container{
-        width: 70%;
+        width: 85%;
         margin: 0 auto;
     }
 </style>
