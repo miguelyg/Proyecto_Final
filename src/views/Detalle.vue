@@ -33,7 +33,7 @@
       </div>
   </div>
 </section>
-<section class="duracion">
+<!-- <section class="duracion">
   <div class="container">
     <h2><img src="../assets/images/file.svg" alt=""> ¿Por qué estudiar en Idat?</h2>
     <div class="duracion_contenido">
@@ -56,7 +56,7 @@
 
     </div>
   </div>
-</section>
+</section> -->
 
 <router-view/>
 
