@@ -14,4 +14,15 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+  <script>
+    function openMetodo(metodoName) {
+        var i;
+        var x = document.getElementsByClassName('metodo');
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = 'none';
+        }
+        document.getElementById(metodoName).style.display = 'block';
+    }
+</script>
+  </script>
 </html>

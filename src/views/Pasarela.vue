@@ -272,20 +272,12 @@
 			</section>
 				
 		</main>
-</template>
+</template>run
 
 <script>
 export default {
 
 }
-function openMetodo(metodoName) {
-        var i;
-        var x = document.getElementsByClassName('metodo');
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = 'none';
-        }
-        document.getElementById(metodoName).style.display = 'block';
-    }
 </script>
 
 <style scoped>
@@ -315,7 +307,7 @@ function openMetodo(metodoName) {
 body {
 	font-family: 'Poppins', sans-serif;
 	font-size: 16px;
-	background-color: var(--bg-sencondary);
+	background-color: var('--bg-sencondary');
 	color: var(--color-primary);
 }
 li {
@@ -371,7 +363,7 @@ main {
 }
 
 .right {
-	border: 1px solid peru;
+	border: 0;
 	max-width: 443px;
 	width: 50%;
 }
@@ -394,7 +386,7 @@ main {
 	width: 100%;
 }
 .pasarela {
-	border: 1px solid purple;
+	border: 0;
 }
 .metodo-pago {
 	width: 100%;

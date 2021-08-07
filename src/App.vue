@@ -60,6 +60,20 @@
 
     }
 
+     :root {
+	--bg-primary: #000425;
+	--bg-sencondary: #f8f8fa;
+	--bg-inactive: #efefef;
+	--color-primary: #222222;
+	--color-secondary: #5640ff;
+	--color-white: #ffff;
+	--color-warnig: #f22a40;
+	--color-opacity: #c4c4c4;
+	--color-inactive: #555555;
+	--font-poppins: 'Poppins', sans-serif;
+	--font-roboto: 'Roboto', sans-serif;
+}
+
 
     *,
     *::before,

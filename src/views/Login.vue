@@ -1,6 +1,6 @@
 <template>
 
-  <div class="fondo">
+<div class="fondo">
 			<div class="contenedor">
 				<header class="header">
 					<div>
@@ -8,7 +8,7 @@
 					</div>
 					<div>
 						<img src="../assets/images/other/pachaqtec.svg" alt="" />
-						<p>ESCUELA DE CODING</p>
+						<p class="slogan">ESCUELA DE CODING</p>
 					</div>
 				</header>
 				<div class="marcas">
@@ -28,11 +28,8 @@
 			</div>
 			<div>
 				<main class="main">
-					<div class="titulo">
-						<h1>¡Explota todo tu potencial técnologico!</h1>
-
-						<p class="subtitulo">Con nuestros programas de especialización</p>
-					</div>
+					<h1 class="titulo">¡Explota todo tu potencial técnologico!</h1>
+					<p class="subtitulo">Con nuestros programas de especialización</p>
 				</main>
 			</div>
 			<div class="contenedor-2">
@@ -45,10 +42,15 @@
 					</button>
 				</div>
 				<div class="form">
-
 					<div id="Iniciar" class="metodo">
-
-						<p>Inicia sesión con tu correo</p>
+						<div class="encabezado">
+							<img
+								class="logo-azul"
+								src="../assets/images/other/icon-pachaqtec-azul.svg"
+								alt=""
+							/>
+							<p>Inicia sesión con tu correo</p>
+						</div>
 						<div>
 							<input
 								class="input-correo"
@@ -61,15 +63,17 @@
 								placeholder="Contraseña "
 							/>
 						</div>
-						<div class="ingresar">
-							<div class="form-boton">
-								<a href="#">ingresar</a>
-							</div>
+						<div class="footer">
+							<button class="btn btn-activo">Ingresar</button>
+
 							<a class="form-link" href="#">¿Olvidaste tu contraseña?</a>
 						</div>
 					</div>
 					<div id="Registrarse" class="metodo" style="display: none">
-						<p>Tambien puedes iniciar sesión con tu correo</p>
+						
+						<div class="titulo-registrate">
+							<p>Puedes registrarte con tu correo</p>
+						</div>
 						<div>
 							<input
 								class="input-nombre"
@@ -98,10 +102,9 @@
 								<a href="#">Terminos y Condiciones</a></label
 							>
 						</div>
-						<div class="registrarse">
-							<div class="form-boton">
-								<a href="#">Registrarse</a>
-							</div>
+						<div class="footer">
+							<button class="btn btn-activo">Registrarse</button>
+
 						</div>
 					</div>
 				</div>
@@ -119,19 +122,7 @@ export default {
 </script>
 
 <style scoped>
-:root {
-	--bg-primary: #000425;
-	--bg-sencondary: #f8f8fa;
-	--bg-inactive: #efefef;
-	--color-primary: #222222;
-	--color-secondary: #5640ff;
-	--color-white: #ffff;
-	--color-warnig: #f22a40;
-	--color-opacity: #c4c4c4;
-	--color-inactive: #555555;
-	--font-poppins: 'Poppins', sans-serif;
-	--font-roboto: 'Roboto', sans-serif;
-}
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600&family=Poppins:wght@100;300;400;600&family=Roboto:wght@100;300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 *,
@@ -154,32 +145,25 @@ li {
 a {
 	text-decoration: none;
 }
-h1 {
-	font-family: var(--font-poppins);
-	font-size: 26px;
-}
+
 .fondo {
 	background: url(../assets/images/other/fondo.png);
 	width: 100%;
 	height: 100vh;
 	background-size: cover;
 	display: flex;
-	display: grid;
-	grid-template-columns: 40% 30% 30%;
-	grid-template-rows: repeat(4, 1fr);
-	overflow: hidden;
 }
 .contenedor {
 	margin: 0 auto;
-	width: 80%;
-	height: 90vh;
-	display: flex ;
+	width: 40%;
+	height: 95vh;
+	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 }
 .header {
-	width: 210px;
-	height: 20%;
+	width: 205px;
+	height: 10%;
 	padding-top: 10px;
 	padding-left: 20px;
 	display: flex;
@@ -187,6 +171,9 @@ h1 {
 	align-items: center;
 	font-size: 14px;
 	color: white;
+}
+.slogan {
+	font-size: 12px;
 }
 .respaldo {
 	font-family: 'Open Sans', sans-serif;
@@ -201,101 +188,130 @@ h1 {
 	justify-content: space-evenly;
 	align-items: flex-end;
 }
-.marca-principal{
+.marca-principal {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 }
 .main {
-	width: 80%;
-	height: 100%;
-	text-align: right;
-	color: white;
-	display: grid;
-	grid-column: 2;
-	grid-row: 2/3;
+	width: 75%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+
+	color: var(--color-white);
 }
 .titulo {
-	height: 800px;
-	width: 80%;
+	height: 80px;
+	width: 90%;
+	font-family: var(--font-poppins);
+	font-size: 26px;
+	text-align: right;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
 .subtitulo {
-	width: 70%;
+	width: 85%;
 	padding-top: 20px;
-	font-size: 1.5rem;
+	font-size: 16px;
+	text-align: right;
 }
 
 .contenedor-2 {
-	width: 100%;
+	width: 450px;
 	height: 100%;
-	background-color: white;
-	display: grid;
-	grid-column: 3/-1;
-	grid-row: 1/5;
+	background-color: var(--bg-sencondary);
 }
-.menu {
+.menu-metodo {
 	width: 100%;
-	height: 20%;
+	height: 60px;
 	display: flex;
 	justify-content: space-around;
 	align-self: center;
 }
-
+.menu-button {
+	font-family: var(--font-poppins);
+	font-size: 14px;
+	font-weight: bold;
+	border: none;
+	width: 100%;
+}
+.logo-azul {
+	width: 60px;
+	height: 60px;
+}
+.encabezado {
+	height: 20vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+.menu-button:hover {
+	border-bottom: #222222 3px solid;
+}
+.menu-button:link {
+	border-bottom: #222222 3px solid;
+}
 .form {
 	width: 100%;
 	min-width: 375px;
 	height: 100%;
-	padding-bottom: 30%;
-	position: relative;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	gap: 55px;
+	justify-content: space-around;
+	align-items: center;
 	text-align: center;
 }
-.sesion {
-	height: 50%;
-	width: 100%;
-	margin-bottom: px;
-	display: flex;
-	flex-direction: column;
-	align-self: center;
-	justify-content: space-between;
-}
-.ingresar {
-	display: flex;
-	flex-direction: column;
-}
 
+.input-nombre,
 .input-contrasena,
+.input-repite-contrasena,
 .input-correo,
 .form-boton {
-	width: 70%;
+	width: 350px;
 	height: 50px;
 	margin-bottom: 20px;
-	border: solid 1px;
-	border-radius: 5px;
 	padding-left: 10px;
+	border: solid 1px var(--color-opacity);
+	border-radius: 5px;
 }
 
-.form-boton {
-	background-color: #5640ff;
-	border: 0;
-	align-self: center;
-	padding: 20px;
+.footer {
+	width: 100%;
+	height: 20vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
 }
-.form-boton a {
-	color: white;
-	font-size: 16px;
-	text-decoration: none;
+
+.btn {
+	width: 350px;
+	height: 50px;
+	font-family: var(--font-roboto);
+	font-size: 14px;
+	font-weight: bold;
+	border: 1px;
+	border-radius: 6px;
+	background-color: var(--color-secondary);
+	color: var(--bg-sencondary);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .form-link {
 	color: #5640ff;
 	font-weight: bold;
 }
+
+.titulo-registrate {
+	height: 12vh;
+}
+
 
 </style>
