@@ -1,68 +1,79 @@
 <template>
     <header class="header">
-        <div class="container">
+        
             <nav class="header_navegacion">
-                <ul class="navegacion_logo">
-                    <li class="opcion_logo">
-                        <img src="../assets/images/logo.svg" alt="">
-                    </li>
-                </ul>
-                <ul class="navegacion_opciones">
-                    <li class="opciones_carrito">
-						<router-link class="boton" to="/miscompras">
-							<img src="../assets/images/carrito.svg" alt="">
-							<label for="">{{carritoContador}}</label>
-						</router-link>	                        
-                    </li>
-                    <li class="opciones_menu">
-                        	
-						<router-link class="boton" to="/login">
-							<img src="../assets/images/sanguchito.svg" alt="">	
-						</router-link>	
-													
-                    </li>
-                </ul>
+				<div class="container">
+					<div class="navegacion_contenido">
+						<ul class="navegacion_logo">
+							<li class="opcion_logo">
+								<img src="../assets/images/logo.svg" alt="">
+							</li>
+						</ul>
+						<ul class="navegacion_opciones">
+							<li class="opciones_carrito">
+								<router-link class="boton" to="/miscompras">
+									<img src="../assets/images/carrito.svg" alt="">
+									<label for="">{{carritoContador}}</label>
+								</router-link>	                        
+							</li>
+							<li class="opciones_menu">
+									
+								<router-link class="boton" to="/login">
+									<img src="../assets/images/sanguchito.svg" alt="">	
+								</router-link>	
+															
+							</li>
+						</ul>
+					</div>
+					
+				</div>
             </nav>
             <section class="header_banner">
-                <h1>¡Explota todo tu potencial tecnológico!</h1>
-				<p>Con nuestros programas de especialización</p>
+				<div class="container">
+					<h1>¡Explota todo tu potencial tecnológico!</h1>
+					<p>Con nuestros programas de especialización</p>
+				</div>
             </section>
             <section class="header_redes">
-                <div class="redes_logos">
-                    <img src="../assets/images/logos_header.svg" alt="">
-                </div>
-                <div class="redes_scroll">
-                    <img src="../assets/images/arrowdown.svg" alt="">
-                </div>
-                <div class="redes_fono">
-                    <form action="" class="fono_form">
-						<p>
-							Postula y obtén un 10% de descuento en el programa
-						</p>
-                        <div>
-                            <input type="text" placeholder="NOMBRE">
-                        </div>
-                        <div>
-                            <input type="text" placeholder="CELULAR">
-                        </div>
-                       <div>
-                            <input type="text" placeholder="CORREO ELECTRÓNICO">
-                       </div>
-                        <div>
-                            <select name="" id="" aria-placeholder="PROGRAMA"></select>
-                        </div>
-                        <div>
-                            <input id="check1" type="checkbox"><label for="check1">Acepto las políticas de privacidad</label>
-                        </div>
-                        <div>
-                            <input  type="button" value="Quiero postular">
-                        </div>
-                        
-                    </form>
-                </div>
-                <div class="redes_wsp"></div>
-            </section>
-        </div>
+				<div class="container">
+					<div class="redes_contenido">
+					<div class="redes_logos">
+						<img src="../assets/images/logos_header.svg" alt="">
+					</div>
+					<div class="redes_scroll">
+						<img src="../assets/images/arrowdown.svg" alt="">
+					</div>
+					<div class="redes_fono">
+						<form action="" class="fono_form">
+							<p>
+								Postula y obtén un 10% de descuento en el programa
+							</p>
+							<div>
+								<input type="text" placeholder="NOMBRE">
+							</div>
+							<div>
+								<input type="text" placeholder="CELULAR">
+							</div>
+						<div>
+								<input type="text" placeholder="CORREO ELECTRÓNICO">
+						</div>
+							<div>
+								<select name="" id="" aria-placeholder="PROGRAMA"></select>
+							</div>
+							<div>
+								<input id="check1" type="checkbox"><label for="check1">Acepto las políticas de privacidad</label>
+							</div>
+							<div>
+								<input  type="button" value="Quiero postular">
+							</div>
+							
+						</form>
+					</div>
+					<div class="redes_wsp"></div>
+					</div>
+
+				</div>
+            </section>        
     </header>
 </template>
 
@@ -76,7 +87,8 @@ export default {
 </script>
 
 <style scoped>
-.header{
+.header
+{
 	display: block;
 	background-image: url('../assets/images/fondo.png');
 	background-position: center;
@@ -90,13 +102,20 @@ export default {
     font-weight: 900;
     text-transform: capitalize;
 }
-.header_navegacion{
+.header_navegacion
+{
+	width: 100%;
+	height: 100px;
+}
+.navegacion_contenido
+{
 	display: flex;
 	flex-direction: row;
-	height: 100px;
+	height: inherit;
 }
 .navegacion_logo{
 	flex: auto;
+	max-width: 100%;
 }
 .opcion_logo{
 	height: 100px;
@@ -104,7 +123,7 @@ export default {
 }
 
 .opcion_logo img{
-	width: 184.28px;
+	width: 138.66px;
 	height: 32px;
 }
 
@@ -165,11 +184,17 @@ export default {
 }
 
 .header_redes{
-	padding-top: 50px;
+	width: 100%;
+	height: 200px;
+}
+
+.redes_contenido{
+	padding-top: 40px;
 	display: flex;
 	width: 100%;
 	height: 200px;
 }
+
 .redes_logos
 {
 	width: 500px;
@@ -280,16 +305,82 @@ export default {
 
 @media (max-height: 680px), screen and (orientation: portrait) 
 { 
+	.redes_fono
+	{
+		display: none;
 
-.redes_fono
-{
-	display: none;
+	}
+}
 
+@media (max-height: 375px), screen and (orientation: portrait) 
+{ 
+
+	.header{
+		display: block;
+		background-image: url('../assets/images/fondo.png');
+		background-position: justify;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 300px;
+	}
+
+	.header_banner
+	{
+		padding-top: 100px;
+		font-family: 'robotobold','poppinsbold';
+		color: #fff;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		text-align: left;
+		width: 100%;
+		height: 200px;
+	}
+
+	.header_navegacion
+	{
+		position: fixed;
+		width: 100%;
+		height: 50px;
+		background-color: black;
+		z-index: 9999;
+	}
+
+	.redes_fono
+	{
+		display: none;
+
+	}
+
+	.header_banner h1
+	{
+	font-size: 1.5em;
+	width: 100%;
+	font-weight: 900;
+	}
+
+	.header_banner p
+	{
+		padding-top: 30px;
+		font-family: 'poppinslight';
+		font-size: 11pt;
+		font-weight: 100;
+		width: 60%;
+		line-height: 1.5em;
+	}
+	.header_redes
+	{
+		padding-top: 100px;
+		width: 100%;
+		height: 200px;
+	}
+	.redes_wsp
+	{
+		display: none;
+	}
 }
 
 
-
-
-}
 
 </style>

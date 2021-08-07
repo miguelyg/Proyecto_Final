@@ -12,9 +12,11 @@
 					</div>
 				</header>
 				<div class="marcas">
-					<div>
-						<p>Con el respaldo de:</p>
-						<img src="../assets/images/other/intercorp.svg" alt="intercorp" />
+					<div class="marca-principal">
+						<p class="respaldo">Con el respaldo de:</p>
+						<div>
+							<img src="../assets/images/other/intercorp.svg" alt="intercorp" />
+						</div>
 					</div>
 					<div>
 						<img src="../assets/images/other/idat.svg" alt="idat" />
@@ -34,20 +36,19 @@
 				</main>
 			</div>
 			<div class="contenedor-2">
-				<nav>
-					<ul class="menu">
-						<li><a href="#">Iniciar Sesión</a></li>
-						<li><a href="#">Registrarse</a></li>
-					</ul>
-				</nav>
+				<div class="menu-metodo">
+					<button class="menu-button" onclick="openMetodo('Iniciar')">
+						Iniciar Sesión
+					</button>
+					<button class="menu-button" onclick="openMetodo('Registrarse')">
+						Registrarse
+					</button>
+				</div>
 				<div class="form">
-					<div class="sesion">
-						<p>Puedes iniciar sesión con:</p>
-						<section class="form-redes">
-							<img src="../assets/images/other/fb.svg" alt="Facebook" />
-							<img src="../assets/images/other/in.svg" alt="Linkenin" />
-						</section>
-						<p>Tambien puedes iniciar sesión con tu correo</p>
+
+					<div id="Iniciar" class="metodo">
+
+						<p>Inicia sesión con tu correo</p>
 						<div>
 							<input
 								class="input-correo"
@@ -60,14 +61,49 @@
 								placeholder="Contraseña "
 							/>
 						</div>
+						<div class="ingresar">
+							<div class="form-boton">
+								<a href="#">ingresar</a>
+							</div>
+							<a class="form-link" href="#">¿Olvidaste tu contraseña?</a>
+						</div>
 					</div>
-                    <div class="ingresar">
-                        <div class="form-boton">
-                            <a href="#">ingresar</a>
-                        </div>
-                        <a class="form-link" href="#">¿Olvidades tu contraseña?</a>
-                    </div>
-					
+					<div id="Registrarse" class="metodo" style="display: none">
+						<p>Tambien puedes iniciar sesión con tu correo</p>
+						<div>
+							<input
+								class="input-nombre"
+								type="text"
+								placeholder="Nombre y apellidos"
+							/>
+							<input
+								class="input-correo"
+								type="text"
+								placeholder="Correo electrónico"
+							/>
+							<input
+								class="input-contrasena"
+								type="password"
+								placeholder="Contraseña "
+							/>
+							<input
+								class="input-repite-contrasena"
+								type="password"
+								placeholder="Repite Contraseña "
+							/>
+						</div>
+						<div class="acepto">
+							<label for=""
+								><input type="checkbox" />Acepto
+								<a href="#">Terminos y Condiciones</a></label
+							>
+						</div>
+						<div class="registrarse">
+							<div class="form-boton">
+								<a href="#">Registrarse</a>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -76,26 +112,51 @@
 <script>
 export default {
 
+
+
 }
+
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap');
+:root {
+	--bg-primary: #000425;
+	--bg-sencondary: #f8f8fa;
+	--bg-inactive: #efefef;
+	--color-primary: #222222;
+	--color-secondary: #5640ff;
+	--color-white: #ffff;
+	--color-warnig: #f22a40;
+	--color-opacity: #c4c4c4;
+	--color-inactive: #555555;
+	--font-poppins: 'Poppins', sans-serif;
+	--font-roboto: 'Roboto', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600&family=Poppins:wght@100;300;400;600&family=Roboto:wght@100;300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 *,
-*::before,
-*::after {
+*::after,
+*::before {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
-html {
-	font-size: 16px;
-	font-family: 'Poppins', sans-serif;
-	/* font-family: 'Roboto', sans-serif; */
-}
 
+body {
+	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+	background-color: var(--bg-sencondary);
+	color: var(--color-primary);
+}
 li {
 	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+h1 {
+	font-family: var(--font-poppins);
+	font-size: 26px;
 }
 .fondo {
 	background: url(../assets/images/other/fondo.png);
@@ -104,17 +165,17 @@ li {
 	background-size: cover;
 	display: flex;
 	display: grid;
-	grid-template-columns: 30% 40% 30%;
+	grid-template-columns: 40% 30% 30%;
 	grid-template-rows: repeat(4, 1fr);
 	overflow: hidden;
 }
 .contenedor {
 	margin: 0 auto;
-	width: 100%;
-	height: 100vh;
-	display: grid;
-	grid-column: 1/2;
-	grid-row: 1/5;
+	width: 80%;
+	height: 90vh;
+	display: flex ;
+	flex-direction: column;
+	justify-content: space-between;
 }
 .header {
 	width: 210px;
@@ -127,16 +188,27 @@ li {
 	font-size: 14px;
 	color: white;
 }
+.respaldo {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 11px;
+}
+
 .marcas {
 	width: 320px;
-	height: 88%;
+	height: 63.08px;
 	color: white;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: flex-end;
 }
+.marca-principal{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
 .main {
-	width: 100%;
+	width: 80%;
 	height: 100%;
 	text-align: right;
 	color: white;
@@ -152,6 +224,7 @@ li {
 	justify-content: center;
 }
 .subtitulo {
+	width: 70%;
 	padding-top: 20px;
 	font-size: 1.5rem;
 }
@@ -224,4 +297,5 @@ li {
 	color: #5640ff;
 	font-weight: bold;
 }
+
 </style>

@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import MisCompras from '../views/MisCompras.vue'
 import Register from '../views/Register.vue'
+import Pasarela from '../views/Pasarela.vue'
 
 const routes = [
   {
@@ -15,6 +16,11 @@ const routes = [
     path: '/register',
     name: 'Register',
     component: Register
+  },
+  {
+    path: '/pasarela',
+    name: 'Pasarela',
+    component: Pasarela
   },
   {
     path: '/miscompras',

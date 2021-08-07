@@ -89,7 +89,9 @@
                         <a href="#"><img src="../assets/images/other/send.svg" alt="enviar" /></a>
                     </div>
                     <div class="btn-continuar">
-                        <a class="continuar" href="#">Continuar</a>
+						<router-link class="continuar" to="/pasarela">
+									Continuar
+						</router-link>	     
                     </div>
                 </div>
             </section>

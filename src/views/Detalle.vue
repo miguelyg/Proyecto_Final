@@ -2,11 +2,13 @@
   <Nav />
 <section class="detalles">
   <div class="container">
-    <h1><img src="../assets/images/infor.svg" alt=""> ¿En qué consiste?</h1>
-    <p>
-    El curso de Electrónica Automotriz está orientado a brindar los conocimientos técnicos en el campo automotriz relacionados con los principios de funcionamiento del sistema electrónico de vehículos automotores que permiten la comprensión y análisis de circuitos electrónicos, sensores, actuadores y ECUs automotrices, desarrollando en los alumnos habilidades y competencias del uso adecuado de herramientas e instrumentos.
-    </p>
-    <img class="detalles_banner" src="../assets/images/curso.jpg" alt="">
+    <div class="detalles_resumen">
+      <h1><img src="../assets/images/infor.svg" alt=""> ¿En qué consiste?</h1>
+      <p>
+      El curso de Electrónica Automotriz está orientado a brindar los conocimientos técnicos en el campo automotriz relacionados con los principios de funcionamiento del sistema electrónico de vehículos automotores que permiten la comprensión y análisis de circuitos electrónicos, sensores, actuadores y ECUs automotrices, desarrollando en los alumnos habilidades y competencias del uso adecuado de herramientas e instrumentos.
+      </p>
+    </div>
+    <div class="detalles_resumen"></div>    
   </div>
 </section>
 
@@ -34,64 +36,25 @@
 <section class="duracion">
   <div class="container">
     <h2><img src="../assets/images/file.svg" alt=""> ¿Por qué estudiar en Idat?</h2>
-    <div class="cursos">
-        <div class="curso">
-          <img src="../assets/images/cursos/curso8.png" alt="">
-          <div class="curso_contenido">
-            <h3>Programa y diseña Macros</h3>
-            <p>En los cursos de Excel avanzado aprenderás a utilizar y diseñar Macros de manera profesional.</p>
-          </div>
-        </div>
-        <div class="curso">
-          <img src="../assets/images/cursos/curso7.png" alt="">
-          <div class="curso_contenido">
-            <h3>Programa y diseña Macros</h3>
-            <p>En los cursos de Excel avanzado aprenderás a utilizar y diseñar Macros de manera profesional.</p>
-          </div>
-        </div>
-      </div>
-  </div>
-</section>
-<section class="horarios">
-  <div class="container">
-    <h2><img src="../assets/images/file.svg" alt=""> ¿Por qué estudiar en Idat?</h2>
-    <div class="cursos">
-        <div class="curso">
-          <img src="../assets/images/cursos/curso8.png" alt="">
-          <div class="curso_contenido">
-            <h3>Programa y diseña Macros</h3>
-            <p>En los cursos de Excel avanzado aprenderás a utilizar y diseñar Macros de manera profesional.</p>
-          </div>
-        </div>
-        <div class="curso">
-          <img src="../assets/images/cursos/curso7.png" alt="">
-          <div class="curso_contenido">
-            <h3>Programa y diseña Macros</h3>
-            <p>En los cursos de Excel avanzado aprenderás a utilizar y diseñar Macros de manera profesional.</p>
-          </div>
-        </div>
-      </div>
+    <div class="duracion_contenido">
+      
+    </div>
   </div>
 </section>
 <section class="planEstudio">
   <div class="container">
     <h2><img src="../assets/images/file.svg" alt=""> ¿Por qué estudiar en Idat?</h2>
-    <div class="cursos">
-        <div class="curso">
-          <img src="../assets/images/cursos/curso8.png" alt="">
-          <div class="curso_contenido">
-            <h3>Programa y diseña Macros</h3>
-            <p>En los cursos de Excel avanzado aprenderás a utilizar y diseñar Macros de manera profesional.</p>
-          </div>
-        </div>
-        <div class="curso">
-          <img src="../assets/images/cursos/curso7.png" alt="">
-          <div class="curso_contenido">
-            <h3>Programa y diseña Macros</h3>
-            <p>En los cursos de Excel avanzado aprenderás a utilizar y diseñar Macros de manera profesional.</p>
-          </div>
-        </div>
-      </div>
+    <div class="planEstudio_contenido">
+
+    </div>
+  </div>
+</section>
+<section class="horarios">
+  <div class="container">
+    <h2><img src="../assets/images/file.svg" alt=""> ¿Por qué estudiar en Idat?</h2>
+    <div class="horario_contenido">
+
+    </div>
   </div>
 </section>
 
@@ -104,12 +67,22 @@
   {
     font-family: 'robotoregular';
     height: auto;
-    width: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .detalles_resumen
+  {
+    width: 50%;
   }
 
   .detalles_banner
   {
-    width: 100%;
+    height: 450px;
+    max-width: 100%;
     padding-left: 20px;
     padding-bottom: 20px;
   }
@@ -129,13 +102,15 @@
     height: auto;
     padding-left: 25px;
     padding-bottom: 30px;
+    line-height: 20pt;
   }
 
   .masDetalles
   {
     font-family: 'robotoregular';
-    width: 60%;
+    width: 100%;
     padding-bottom: 30px;
+    display: flex;
   }
 
   .masDetalles h2
@@ -150,6 +125,7 @@
     gap: 20px;
     grid-auto-rows: minmax(150px, auto);
     padding-left: 20px;
+    width: 60%;
   }
 
   .curso
@@ -182,7 +158,13 @@
 
   .duracion
   {
+    display: flex;
     font-family: 'robotoregular';
+    width: 100%;
+  }
+
+  .duracion_contenido
+  {
     width: 60%;
   }
 
@@ -193,12 +175,25 @@
 
   .horarios
   {
+    display: flex;
     font-family: 'robotoregular';
-    width: 60%;
+    width: 100%;
   }
+
+.horarios_contenido
+{
+  width: 60%;
+}
+
   .planEstudio
   {
+    display: flex;
     font-family: 'robotoregular';
+    width: 100%;
+  }
+
+  .planEstudio_contenido
+  {
     width: 60%;
   }
 
