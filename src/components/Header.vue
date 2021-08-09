@@ -5,15 +5,17 @@
 				<div class="container">
 					<div class="navegacion_contenido">
 						<ul class="navegacion_logo">
-							<li class="opcion_logo">
-								<img src="../assets/images/logo.svg" alt="">
-							</li>
+							<router-link class="boton" to="/">
+								<li class="opcion_logo">
+									<img src="../assets/images/logo.svg" alt="">
+								</li>
+							</router-link>	   							
 						</ul>
 						<ul class="navegacion_opciones">
 							<li class="opciones_carrito">
 								<router-link class="boton" to="/miscompras">
 									<img src="../assets/images/carrito.svg" alt="">
-									<label for="">{{carritoContador}}</label>
+									<label for="">{{carrito.length}}</label>
 								</router-link>	                        
 							</li>
 							<li class="opciones_menu">
@@ -58,7 +60,23 @@
 								<input type="text" placeholder="CORREO ELECTRÓNICO">
 						</div>
 							<div>
-								<select name="" id="" aria-placeholder="PROGRAMA"></select>
+								<select name="" id="" aria-placeholder="PROGRAMA">
+									<option>PROGRAMA</option>
+    								<option v-for="curso in cursos" :id="`${curso.id}`">{{ curso.titulo_largo }}</option>
+								</select>
+								<!-- <div v-for="tarea in tareas" :key="tarea.id">
+									<p>{{tarea.id}}</p>
+									<p>{{tarea.nombre}}</p>
+									<hr>
+									<div v-for="(framework,index) in tarea.frameworks" :key="index">
+									<p>        
+										{{framework}}
+									</p>
+									</div>
+									<p>{{tarea.jobTitle}}</p>
+									<p>{{tarea.pretensions}}</p>
+								</div> -->
+
 							</div>
 							<div>
 								<input id="check1" type="checkbox"><label for="check1">Acepto las políticas de privacidad</label>
@@ -81,7 +99,7 @@
 import {mapState} from 'vuex';
 export default {	
     computed:{
-        ...mapState(['carritoContador']),
+        ...mapState(['carrito','cursos']),
     },
 }
 </script>

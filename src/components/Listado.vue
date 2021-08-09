@@ -3,23 +3,34 @@
         <div class="container">
             <h2>Conoce nuestros Programas de Especialización</h2>
             <div class="listado_programas">
-                <div class="programas_lista">
-                    <div class="lista_curso">
-                        <img src="../assets/images/cursos/curso1.png" class="curso_imagen" alt="">
-                        <p>Desarrollo <br> Front-End</p> 
+                <div class="programas_lista" >
+                    <div class="lista_curso" v-for="curso in cursos" :key="curso.id">
+                        <img :src="require(`../assets/images/cursos/curso${curso.id}.png`)" class="curso_imagen" alt="">
+                        <p>{{curso.titulo_largo}}</p> 
                         <div class="curso_botones">
-                            <a class="boton" @click="agregarCarrito">
+                            <a class="boton" @click="agregarArregloCarrito">
                                 <img src="../assets/images/carrito.svg" alt="">
                                 Agregar
                             </a>
-                            <router-link class="boton" to="/detalle/1">
+                            <router-link class="boton" :to="`/detalle/${curso.id}`">
                                  <img src="../assets/images/mas.svg" alt="">
                                 Ver Mas
                             </router-link>
-                        </div>
-                    
+                        </div>                    
                     </div>
-                    <div class="lista_curso">
+                    <!-- <div v-for="tarea in tareas" :key="tarea.id">
+                        <p>{{tarea.id}}</p>
+                        <p>{{tarea.nombre}}</p>
+                        <hr>
+                        <div v-for="(framework,index) in tarea.frameworks" :key="index">
+                        <p>        
+                            {{framework}}
+                        </p>
+                        </div>
+                        <p>{{tarea.jobTitle}}</p>
+                        <p>{{tarea.pretensions}}</p>
+                    </div> -->
+                    <!-- <div class="lista_curso">
                         <img src="../assets/images/cursos/curso2.png" class="curso_imagen" alt="">
                         <p>Desarrollo <br> Back-End</p>
                         <div class="curso_botones">
@@ -116,7 +127,7 @@
                                 Ver Mas
                             </router-link>
                         </div>
-                    </div>                 
+                    </div>                  -->
                 </div>
             </div>
         </div>        
@@ -127,10 +138,10 @@
 import { mapState, mapActions } from 'vuex';
 export default {
     computed:{
-        ...mapState(['cursos','carritoContador']),
+        ...mapState(['cursos','carrito']),
     },
     methods:{
-        ...mapActions(['getCursosAction','agregarCarrito']),       
+        ...mapActions(['getCursosAction','agregarArregloCarrito']),       
     },
     created(){
         this.getCursosAction();
@@ -210,7 +221,7 @@ export default {
     font-family: 'roboto';
     top: 50%;
     padding: 25px;
-    width: 300px;
+    width: 200px;
 	position: absolute;
 	color: white;
 	z-index: 9;

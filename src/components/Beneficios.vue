@@ -43,7 +43,10 @@
                             <input type="text" placeholder="CORREO ELECTRÓNICO">
                     </div>
                         <div>
-                            <select name="" id="" aria-placeholder="PROGRAMA"></select>
+                            <select name="" id="" aria-placeholder="PROGRAMA">
+                                <option>PROGRAMA</option>
+                                <option v-for="curso in cursos" :id="`${curso.id}`">{{ curso.titulo_largo }}</option>
+                            </select>
                         </div>
                         <div>
                             <input id="check1" type="checkbox"><label for="check1">Acepto las políticas de privacidad</label>
@@ -60,8 +63,11 @@
 </template>
 
 <script>
-export default {
-
+import {mapState} from 'vuex';
+export default {	
+    computed:{
+        ...mapState(['cursos']),
+    },
 }
 </script>
 

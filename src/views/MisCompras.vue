@@ -11,7 +11,10 @@
 				<nav class="menu">
 					<ul class="botones">
 						<li>
-							<a href=""> <img src="../assets/images/other/carrito.svg" alt="carrito" /></a>
+							<router-link class="boton" to="/miscompras">
+								<img src="../assets/images/carrito.svg" alt="">
+								<label for="">{{carrito.length}}</label>
+							</router-link>	
 						</li>
 						<li>
 							<a href=""><img src="../assets/images/other/togle.svg" alt="togle" /></a>
@@ -99,8 +102,11 @@
 </template>
 
 <script>
-export default {
-
+import {mapState} from 'vuex';
+export default {	
+    computed:{
+        ...mapState(['carrito','cursos']),
+    },
 }
 </script>
 

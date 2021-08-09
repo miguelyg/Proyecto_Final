@@ -14,6 +14,7 @@ import Aviso from '@/components/Aviso.vue'
 import Beneficios from '@/components/Beneficios.vue'
 import Footer from '@/components/footer.vue'
 
+
 export default {
   name: 'App',
   components: {
@@ -24,6 +25,7 @@ export default {
     Footer
   }
 }
+
 </script>
 
 <style>

@@ -4,7 +4,9 @@
 			<div class="contenedor">
 				<header class="header">
 					<div>
-						<img src="../assets/images/other/icon-pachaqtec.svg" alt="icon-pachaqtec" />
+						<router-link class="boton" to="/">
+							<img src="../assets/images/other/icon-pachaqtec.svg" alt="icon-pachaqtec" />
+						</router-link>							
 					</div>
 					<div>
 						<img src="../assets/images/other/pachaqtec.svg" alt="" />
