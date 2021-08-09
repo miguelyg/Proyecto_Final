@@ -8,7 +8,7 @@
                         <img :src="require(`../assets/images/cursos/curso${curso.id}.png`)" class="curso_imagen" alt="">
                         <p>{{curso.titulo_largo}}</p> 
                         <div class="curso_botones">
-                            <a class="boton" @click="agregarArregloCarrito">
+                            <a class="boton" @click="agregarArregloCarrito(curso)">
                                 <img src="../assets/images/carrito.svg" alt="">
                                 Agregar
                             </a>

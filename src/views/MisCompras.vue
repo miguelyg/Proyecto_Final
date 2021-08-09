@@ -10,7 +10,7 @@
 				</div>
 				<nav class="menu">
 					<ul class="botones">
-						<li>
+						<li class="opciones_carrito">
 							<router-link class="boton" to="/miscompras">
 								<img src="../assets/images/carrito.svg" alt="">
 								<label for="">{{carrito.length}}</label>
@@ -37,20 +37,32 @@
 		</section>
         <main class="contenedor"> 
             <section class="cursos">
-                <div class="row curso">
-                    <div class="curso-img">
-                        <img src="../assets/images/other/curso.png" alt="">
-                    </div>
-                    <div class="curso-info">
-                        <h3 class="curso-titulo">Gestión de Envases, Empaques y Embalajes</h3>
-						<p class="dscto">Dto.25%</p>
-						<a class="eliminar" href="#">Eliminar</a>
-                    </div>
-                    <div >
-                        <p class="curso-precio"> S/269</p>
-                    </div>
+                <div class="row curso" v-for="curso in carrito" :key="curso.id">
+                        <div class="curso-img">
+							<img src="../assets/images/other/curso.png" alt="">
+						</div>
+						<div class="curso-info">
+							<h3 class="curso-titulo">{{curso.titulo_largo}}</h3>
+							<p class="dscto">Dto.25%</p>
+							<a class="eliminar" href="#">Eliminar</a>
+						</div>
+						<div >
+							<p class="curso-precio"> S/{{curso.precio}}</p>
+						</div>                
                 </div>
-                <div class="row curso">
+				<!-- <div v-for="tarea in tareas" :key="tarea.id">
+                        <p>{{tarea.id}}</p>
+                        <p>{{tarea.nombre}}</p>
+                        <hr>
+                        <div v-for="(framework,index) in tarea.frameworks" :key="index">
+                        <p>        
+                            {{framework}}
+                        </p>
+                        </div>
+                        <p>{{tarea.jobTitle}}</p>
+                        <p>{{tarea.pretensions}}</p>
+                    </div> -->
+                <!-- <div class="row curso">
                     <div class="curso-img">
                         <img src="../assets/images/other/curso.png" alt="">
                     </div>
@@ -75,13 +87,13 @@
                     <div class="curso-precio">
                         <p>S/269</p>
                     </div>
-                </div>
+                </div> -->
             </section>
             <section class="compra">
                 <div class=" subtotal">
                     <div class="compra-box">
                         <h3 class="sub-titulo">Subtotal</h3>
-                        <p class="sub-precio">S/.600</p>
+                        <p class="sub-precio">S/.{{precioTotal}}</p>
                     </div>
                     <div class="descuento">
                         <input
@@ -105,7 +117,7 @@
 import {mapState} from 'vuex';
 export default {	
     computed:{
-        ...mapState(['carrito','cursos']),
+        ...mapState(['carrito','cursos','precioTotal']),
     },
 }
 </script>
@@ -294,6 +306,18 @@ li {
 .continuar {
 	text-decoration: none;
 	color: white;
+}
+
+.opciones_carrito label
+{
+	position: absolute;
+	background-color: #5640ff;
+	border-radius: 50%;
+	border-style: solid;
+	border-color: #5640ff;
+	border-width: 5px;
+	font-size: 7pt;
+	cursor: pointer;
 }
 
 /* Media Queries*/

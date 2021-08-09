@@ -6,6 +6,7 @@ export default createStore({
     cursos:[],
     carrito:[],
     carritoContador:0,
+    precioTotal:0,
   },
   mutations: {
     getCursosMutation(state,payload){
@@ -19,7 +20,8 @@ export default createStore({
     },
     agregarArregloCarritoMutation(state,payload)
     {
-      state.carrito.push(payload);
+      state.carrito.push(payload);     
+      state.precioTotal += parseFloat(payload.precio);        
     }
   },
   actions: {
