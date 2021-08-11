@@ -103,7 +103,7 @@
 							<p>solicitar factura</p>
 						</div>
 						<div class="finalizar">
-							<button class="btn btn-activo"> Finalizar compra</button>
+							<a class="btn btn-activo" @click="procederPagarTodo(usuario)"> Finalizar compra</a>
 						</div>
 					</div>
 
@@ -148,7 +148,7 @@
 							<p>solicitar factura</p>
 						</div>
 						<div class="finalizar">
-							<button class="btn btn-activo"> Finalizar compra</button>
+							<a class="btn btn-activo" @click="procederPagarTodo(usuario)"> Finalizar compra</a>
 						</div>
 					</div>
 
@@ -209,7 +209,7 @@
 							<p>solicitar factura</p>
 						</div>
 						<div class="finalizar">
-							<button class="btn btn-activo"> Finalizar compra</button>
+							<a class="btn btn-activo" @click="procederPagarTodo(usuario)"> Finalizar compra</a>
 						</div>
 					</div>
 				</section>
@@ -217,44 +217,18 @@
 
 			<section class="right">
 				<section class="cursos">
-					<div class="row curso">
+					<div class="row curso" v-for="(curso,index) in carrito" :key="index">
 						<div class="curso-img">
 							<img src="../assets/images/other/curso.png" alt="">
 						</div>
 						<div class="curso-info">
-							<h3 class="curso-titulo">Gestión de Envases, Empaques y Embalajes</h3>
+							<h3 class="curso-titulo">{{curso.titulo_largo}}</h3>
 							<p class="dscto">Dto.25%</p>
-							<a class="eliminar" href="#">Eliminar</a>
+							<a class="eliminar" @click="removeArregloCarrito(curso)">Eliminar</a>
 						</div>
 						<div >
-							<p class="curso-precio"> S/269</p>
-						</div>
-					</div>
-					<div class="row curso">
-						<div class="curso-img">
-							<img src="../assets/images/other/curso.png" alt="">
-						</div>
-						<div class="curso-info">
-							<h3 class="curso-titulo">Gestión de Envases, Empaques y Embalajes</h3>
-							<p class="dscto">Dto.25%</p>
-							<a class="eliminar" href="#">Eliminar</a>
-						</div>
-						<div >
-							<p class="curso-precio"> S/269</p>
-						</div>
-					</div>
-					<div class="row curso">
-						<div class="curso-img">
-							<img src="../assets/images/other/curso.png" alt="">
-						</div>
-						<div class="curso-info">
-							<h3 class="curso-titulo">Gestión de Envases, Empaques y Embalajes</h3>
-							<p class="dscto">Dto.25%</p>
-							<a class="eliminar" href="#">Eliminar</a>
-						</div>
-						<div >
-							<p class="curso-precio"> S/269</p>
-						</div>
+							<p class="curso-precio"> S/{{curso.precio}}</p>
+						</div>                
 					</div>
 				</section>
 				<div class="descuento">
@@ -267,7 +241,7 @@
 				</div>
 				<div class="compra-box">
 					<h3 class="sub-titulo">Subtotal</h3>
-					<p class="sub-precio">S/.600</p>
+					<p class="sub-precio">S/.{{precioTotal}}</p>
 				</div>
 			</section>
 				
@@ -275,8 +249,14 @@
 </template>run
 
 <script>
-export default {
-
+import { mapState, mapActions } from 'vuex';
+export default {	
+    computed:{
+        ...mapState(['carrito','cursos','precioTotal','curso','usuario']),
+    },
+    methods:{
+        ...mapActions(['removeArregloCarrito','procederPagarTodo']),      
+    },
 }
 </script>
 
@@ -416,6 +396,7 @@ main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	cursor: pointer;
 }
 
 .btn:link {
@@ -541,6 +522,7 @@ input{
 	
 	background-color: var(--color-secondary);
 	color: var(--color-white);
+	cursor: pointer;
 }
 
 .finalizar{
@@ -615,4 +597,151 @@ font-size: 12px;
 	align-items: center;
 	justify-content: space-between;
 }
+
+@media screen and (max-width: 425px) {
+	.header {
+		display: none;
+	}
+
+	.seccion-titulo {
+		display: none;
+	}
+	.seccion-titulo-mobile {
+		width: 100%;
+		height: 50px;
+		padding-left: 15px;
+		display: flex;
+		align-items: center;
+		color: var(--bg-sencondary);
+		background-color: var(--bg-primary);
+	}
+	.icon-flecha-white {
+		display: block;
+		width: 15px;
+		height: 13px;
+		background: url(../assets/images/other/arrow-white.svg);
+	}
+	.titulo-mobile {
+		padding-left: 12px;
+	}
+	.container {
+		width: 90%;
+		height: auto;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.left {
+		order: 2;
+	}
+
+	.btn {
+		font-size: 12px;
+		width: 33%;
+		height: 50px;
+	}
+	.credito-metodo,
+	.debito-metodo,
+	.Efectivo-metodo {
+		width: 100%;
+	}
+	.usuario {
+		width: 100%;
+		height: 120px;
+		display: flex;
+		
+		flex-wrap: wrap;
+	}
+	.descuento, .usuario-dni, .usuario-correo, .nombre-titular, .numero-tarjeta{
+		width: 100%;
+	}
+	.info-tarjeta,
+	.datos-personales {
+		width: 100%;
+		height: 300px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+	.datos-personales {
+		width: 100%;
+		height: 200px;
+	}
+
+	.datos-tarjeta {
+		height: 120px;
+		width: 100%;
+		display: flex;
+		align-content: space-between;
+		flex-wrap: wrap;
+	}
+	.valida-tarjeta {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+	.tarjeta-mes,
+	.tarjeta-anio,
+	.tarjeta-cvc {
+		width: 30%;
+	}
+
+	.cuotas {
+		width: 100%;
+		height: 150px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.nro-cuotas {
+		height: auto;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	.cuota {
+		margin-bottom: 10px;
+	}
+	.finalizar {
+		width: 100%;
+	}
+	.btn-activo {
+		width: 100%;
+		cursor: pointer;
+	}
+	.banca {
+		width: 100%;
+	}
+	.bloque {
+		width: 100%;
+	}
+	.agencias {
+		width: 100%;
+		height: 165px;
+	}
+	.nuevas-agencias {
+		width: 70%;
+	}
+	.right {
+		order: 1;
+		width: 100%;
+	}
+	.cursos {
+		padding-top: 10px;
+		width: 100%;
+		height: auto;
+	}
+	.curso {
+		width: 100%;
+		position: relative;
+	}
+	.curso-precio {
+		position: absolute;
+		right: 0;
+	}
+}
+
+
 </style>

@@ -37,14 +37,14 @@
 		</section>
         <main class="contenedor"> 
             <section class="cursos">
-                <div class="row curso" v-for="curso in carrito" :key="curso.id">
+                <div class="row curso" v-for="(curso,index) in carrito" :key="index">
                         <div class="curso-img">
 							<img src="../assets/images/other/curso.png" alt="">
 						</div>
 						<div class="curso-info">
 							<h3 class="curso-titulo">{{curso.titulo_largo}}</h3>
 							<p class="dscto">Dto.25%</p>
-							<a class="eliminar" href="#">Eliminar</a>
+							<a class="eliminar" @click="removeArregloCarrito(curso)">Eliminar</a>
 						</div>
 						<div >
 							<p class="curso-precio"> S/{{curso.precio}}</p>
@@ -103,10 +103,10 @@
                         />
                         <a href="#"><img src="../assets/images/other/send.svg" alt="enviar" /></a>
                     </div>
-                    <div class="btn-continuar">
-						<router-link class="continuar" to="/pasarela">
-									Continuar
-						</router-link>	     
+                    <div class="continuar">
+						<button class="btn-continuar" @click="procederGoPasarela(usuario)">
+							Continuar
+						</button>    
                     </div>
                 </div>
             </section>
@@ -114,10 +114,13 @@
 </template>
 
 <script>
-import {mapState} from 'vuex';
+import { mapState, mapActions } from 'vuex';
 export default {	
     computed:{
-        ...mapState(['carrito','cursos','precioTotal']),
+        ...mapState(['carrito','cursos','precioTotal','curso','usuario']),
+    },
+    methods:{
+        ...mapActions(['procederGoPasarela','removeArregloCarrito']),      
     },
 }
 </script>
@@ -236,6 +239,7 @@ li {
 	font-family: 'Poppins', sans-serif;
 	font-size: 12px;
 	color: #5640ff;
+	cursor: pointer;
 }
 .curso-precio {
 	margin-left: 20px;
@@ -302,10 +306,13 @@ li {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	color: white;
+	cursor: pointer;
 }
 .continuar {
 	text-decoration: none;
 	color: white;
+	font-family: 'Poppins', sans-serif;
 }
 
 .opciones_carrito label

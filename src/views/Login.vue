@@ -28,7 +28,7 @@
 					</div>
 				</div>
 			</div>
-			<div>
+			<div class="contenedor-extra">
 				<main class="main">
 					<h1 class="titulo">¡Explota todo tu potencial técnologico!</h1>
 					<p class="subtitulo">Con nuestros programas de especialización</p>
@@ -313,6 +313,28 @@ a {
 
 .titulo-registrate {
 	height: 12vh;
+}
+
+@media screen and (max-width: 768px) {
+	
+	.contenedor {
+		display: none;
+	}
+	.contenedor-extra {
+		display: none;
+	}	
+	
+}
+
+@media screen and (max-width: 425px) {
+	.contenedor {
+		display: none;
+	}
+
+	.contenedor-extra {
+		display: none;
+	}
+	
 }
 
 

@@ -1,7 +1,7 @@
 <template>
   <main class="listado">
         <div class="container">
-            <h2>Conoce nuestros Programas de Especialización</h2>
+            <h2 id="titulo_scroll">Conoce nuestros Programas de Especialización</h2>
             <div class="listado_programas">
                 <div class="programas_lista" >
                     <div class="lista_curso" v-for="curso in cursos" :key="curso.id">
@@ -17,117 +17,7 @@
                                 Ver Mas
                             </router-link>
                         </div>                    
-                    </div>
-                    <!-- <div v-for="tarea in tareas" :key="tarea.id">
-                        <p>{{tarea.id}}</p>
-                        <p>{{tarea.nombre}}</p>
-                        <hr>
-                        <div v-for="(framework,index) in tarea.frameworks" :key="index">
-                        <p>        
-                            {{framework}}
-                        </p>
-                        </div>
-                        <p>{{tarea.jobTitle}}</p>
-                        <p>{{tarea.pretensions}}</p>
-                    </div> -->
-                    <!-- <div class="lista_curso">
-                        <img src="../assets/images/cursos/curso2.png" class="curso_imagen" alt="">
-                        <p>Desarrollo <br> Back-End</p>
-                        <div class="curso_botones">
-                            <a class="boton" @click="agregarCarrito">
-                                <img src="../assets/images/carrito.svg" alt="">
-                                Agregar
-                            </a>
-                            <router-link class="boton" to="/detalle/1">
-                                <img src="../assets/images/mas.svg" alt="">
-                                Ver Mas
-                            </router-link>
-                        </div>
-                    </div>
-                    <div class="lista_curso">
-                        <img src="../assets/images/cursos/curso3.png" class="curso_imagen" alt="">
-                        <p>Desarrollo de <br> Aplicaciones Móviles</p>
-                        <div class="curso_botones">
-                            <a class="boton" @click="agregarCarrito">
-                                <img src="../assets/images/carrito.svg" alt="">
-                                Agregar
-                            </a>
-                            <router-link class="boton" to="/detalle/1">
-                                <img src="../assets/images/mas.svg" alt="">
-                                Ver Mas
-                            </router-link>
-                        </div>
-                    </div>
-                    <div class="lista_curso">
-                        <img src="../assets/images/cursos/curso4.png" class="curso_imagen" alt="">
-                        <p>Diseño de Experiencia de <br> Usuario</p>
-                        <div class="curso_botones">
-                            <a class="boton" @click="agregarCarrito">
-                                <img src="../assets/images/carrito.svg" alt="">
-                                Agregar
-                            </a>
-                            <router-link class="boton" to="/detalle/1">
-                                <img src="../assets/images/mas.svg" alt="">
-                                Ver Mas
-                            </router-link>
-                        </div>
-                    </div>
-                    <div class="lista_curso">
-                        <img src="../assets/images/cursos/curso5.png" class="curso_imagen" alt="">
-                        <p>Desarrollo de <br> Videojuegos</p>
-                        <div class="curso_botones">
-                            <a class="boton" @click="agregarCarrito">
-                                <img src="../assets/images/carrito.svg" alt="">
-                                Agregar
-                            </a>
-                            <router-link class="boton" to="/detalle/1">
-                                <img src="../assets/images/mas.svg" alt="">
-                                Ver Mas
-                            </router-link>
-                        </div>
-                    </div>
-                    <div class="lista_curso">
-                        <img src="../assets/images/cursos/curso6.png" class="curso_imagen" alt="">
-                        <p>Marketing <br> Digital</p>
-                        <div class="curso_botones">
-                            <a class="boton" @click="agregarCarrito">
-                                <img src="../assets/images/carrito.svg" alt="">
-                                Agregar
-                            </a>
-                            <router-link class="boton" to="/detalle/1">
-                                <img src="../assets/images/mas.svg" alt="">
-                                Ver Mas
-                            </router-link>
-                        </div>
-                    </div>     
-                    <div class="lista_curso">
-                        <img src="../assets/images/cursos/curso7.png" class="curso_imagen" alt="">
-                        <p>Data <br> Analytics</p>
-                        <div class="curso_botones">
-                            <a class="boton" @click="agregarCarrito">
-                                <img src="../assets/images/carrito.svg" alt="">
-                                Agregar
-                            </a>
-                            <router-link class="boton" to="/detalle/1">
-                                <img src="../assets/images/mas.svg" alt="">
-                                Ver Mas
-                            </router-link>
-                        </div>
-                    </div>  
-                    <div class="lista_curso">
-                        <img src="../assets/images/cursos/curso8.png" class="curso_imagen" alt="">
-                        <p>Desarrollo <br> Front-End Avanzando</p>
-                        <div class="curso_botones">
-                            <a class="boton" @click="agregarCarrito">
-                                <img src="../assets/images/carrito.svg" alt="">
-                                Agregar
-                            </a>                            
-                            <router-link class="boton" to="/detalle/1">
-                                <img src="../assets/images/mas.svg" alt="">
-                                Ver Mas
-                            </router-link>
-                        </div>
-                    </div>                  -->
+                    </div>                    
                 </div>
             </div>
         </div>        
@@ -141,7 +31,7 @@ export default {
         ...mapState(['cursos','carrito']),
     },
     methods:{
-        ...mapActions(['getCursosAction','agregarArregloCarrito']),       
+        ...mapActions(['getCursosAction','agregarArregloCarrito']),     
     },
     created(){
         this.getCursosAction();

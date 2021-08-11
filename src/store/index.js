@@ -1,8 +1,10 @@
 import { createStore } from 'vuex'
+import router from '../router/index.js'
 
 export default createStore({
   state: {
     curso:{},
+    usuario:{},
     cursos:[],
     carrito:[],
     carritoContador:0,
@@ -15,13 +17,50 @@ export default createStore({
     getCursoMutation(state,payload){
       state.curso = payload;
     },
-    agregarCarrito(state){
-      state.carritoContador++;
-    },
     agregarArregloCarritoMutation(state,payload)
+    {      
+      const car = state.carrito.includes(payload)  
+      console.log(car);
+      if (!car)
+      {
+        state.carrito.push(payload);   
+        state.precioTotal = 0;
+        state.carrito.forEach(cur => {
+          state.precioTotal += parseFloat(cur.precio);    
+        });  
+      }        
+    },
+    procederGoPasarelaMutation(state,payload)
     {
-      state.carrito.push(payload);     
-      state.precioTotal += parseFloat(payload.precio);        
+      router.push('/pasarela');
+      // state.usuario = payload;
+  
+      // if (state.usuario.id == null)
+      // {
+      //   // this.$router.push({ name: 'Home' });
+      //   router.push('/login');
+      // }else
+      // {
+      //   // this.$router.push({ name: "Pasarela"})
+      //   router.push('/pasarela');
+      // }         
+    },
+    procederPagarTodoMutation(state,payload){
+       state.usuario = payload;  
+       if (state.usuario.id == null)
+      {
+         // this.$router.push({ name: 'Home' });
+         router.push('/login');
+      }  
+    },
+    removeArregloCarritoMutation(state,payload)
+    {
+      const nuevoArreglo = state.carrito.filter(curso => curso != payload);
+      state.carrito = [...nuevoArreglo];
+      state.precioTotal = 0;
+      state.carrito.forEach(cur => {
+        state.precioTotal += parseFloat(cur.precio);    
+      });   
     }
   },
   actions: {
@@ -39,14 +78,19 @@ export default createStore({
       this.curso = info;
       commit('getCursoMutation',this.curso);
     },
-    agregarCarrito({commit}){
-      // match con mutacion
-      commit('agregarCarrito');
-    },
     agregarArregloCarrito({commit},curso){
-      console.log(curso);
       // match con mutacion
       commit('agregarArregloCarritoMutation',curso);
+    },
+    procederGoPasarela({commit},usuario){
+      // match con mutacion
+      commit('procederGoPasarelaMutation',usuario);
+    },
+    removeArregloCarrito({commit},curso){
+      commit('removeArregloCarritoMutation',curso);
+    },
+    procederPagarTodo({commit},usuario){
+      commit('procederPagarTodoMutation',usuario);
     }
   },
   modules: {

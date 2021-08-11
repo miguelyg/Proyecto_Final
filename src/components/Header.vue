@@ -18,13 +18,31 @@
 									<label for="">{{carrito.length}}</label>
 								</router-link>	                        
 							</li>
-							<li class="opciones_menu">
-									
-								<router-link class="boton" to="/login">
-									<img src="../assets/images/sanguchito.svg" alt="">	
-								</router-link>	
-															
+							<li class="opciones_menu">		
+								<img class="nav-toggle" src="../assets/images/sanguchito.svg" alt="">																						
 							</li>
+							<ul class="nav-menu nav-menu_visible">
+								<li class="nav-menu-item">
+									<router-link class="nav-menu-link" to="/">
+									Inicio
+									</router-link>	        
+								</li>
+								<li class="nav-menu-item">
+									<router-link class="nav-menu-link" to="/login">
+									Login
+									</router-link>
+								</li>
+								<li class="nav-menu-item">
+									<router-link class="nav-menu-link" to="/miscompras">
+									Carrito
+									</router-link>
+								</li>
+								<li class="nav-menu-item menu_link_active">
+									<router-link class="nav-menu-link" to="/pasarela">
+									Pagos
+									</router-link>
+								</li>
+							</ul>
 						</ul>
 					</div>
 					
@@ -40,10 +58,13 @@
 				<div class="container">
 					<div class="redes_contenido">
 					<div class="redes_logos">
-						<img src="../assets/images/logos_header.svg" alt="">
+						
+							<img src="../assets/images/logos_header.svg" alt="">					
 					</div>
 					<div class="redes_scroll">
-						<img src="../assets/images/arrowdown.svg" alt="">
+						<a @click="scrollPage">
+							<img src="../assets/images/arrowdown.svg" alt="">
+						</a>						
 					</div>
 					<div class="redes_fono">
 						<form action="" class="fono_form">
@@ -96,15 +117,74 @@
 </template>
 
 <script>
-import {mapState} from 'vuex';
+import { mapState, mapActions } from 'vuex';
 export default {	
     computed:{
         ...mapState(['carrito','cursos']),
+    },
+	methods:{
+        scrollPage()
+        {
+            const titulo_scroll = document.getElementById('titulo_scroll');
+            titulo_scroll.scrollIntoView({
+            block: 'center',
+			behavior: "smooth"
+            });
+        }       
     },
 }
 </script>
 
 <style scoped>
+
+.nav-menu{
+	background-color: var(--primary);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 200px;
+	height: 180px;
+	position: fixed;
+	z-index: 2;
+	top:60px;
+	/* right:415px; */
+	border-bottom-left-radius : 10px;
+	border-bottom-right-radius : 10px;
+	color: white;
+}
+.nav-menu-item{
+	width: 100%;
+	padding: 10px;
+	cursor: pointer;
+}
+.nav-menu-link{
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	color: var(--sencondary);
+	
+}
+.nav-menu-item:hover,
+.menu_link_active{
+	width: 100%;
+	display: block;
+	background-color: var(--purple);
+	transition: 0.5s;
+}
+.menu_link_active{
+	background-color: rgb(58, 29, 221);
+	border-bottom-left-radius : 10px;
+	border-bottom-right-radius : 10px;
+}
+
+.nav-toggle{
+	display: block;
+}
+.nav-menu_visible{
+	display: none;
+	transition: 0.3s;
+}
+
 .header
 {
 	display: block;
