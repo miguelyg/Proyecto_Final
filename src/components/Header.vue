@@ -18,14 +18,14 @@
 									<label for="">{{carrito.length}}</label>
 								</router-link>	                        
 							</li>
-							<li class="opciones_menu">		
-								<img class="nav-toggle" src="../assets/images/sanguchito.svg" alt="">																						
+							<li class="opciones_menu">
+								<a @click="togg"><img class="nav-toggle" src="../assets/images/other/togle.svg" alt="togle" /></a>
 							</li>
 							<ul class="nav-menu nav-menu_visible">
 								<li class="nav-menu-item">
 									<router-link class="nav-menu-link" to="/">
 									Inicio
-									</router-link>	        
+									</router-link>	 
 								</li>
 								<li class="nav-menu-item">
 									<router-link class="nav-menu-link" to="/login">
@@ -37,7 +37,7 @@
 									Carrito
 									</router-link>
 								</li>
-								<li class="nav-menu-item menu_link_active">
+								<li class="nav-menu-item">
 									<router-link class="nav-menu-link" to="/pasarela">
 									Pagos
 									</router-link>
@@ -114,6 +114,7 @@
 				</div>
             </section>        
     </header>
+	
 </template>
 
 <script>
@@ -130,60 +131,21 @@ export default {
             block: 'center',
 			behavior: "smooth"
             });
-        }       
+        },
+		togg()
+		{
+            const navToogle=document.querySelector(".nav-toggle")
+            const navMenu=document.querySelector(".nav-menu")
+            navToogle.addEventListener("click",()=> {
+                navMenu.classList.toggle("nav-menu_visible")
+            });
+
+		}     
     },
 }
 </script>
 
 <style scoped>
-
-.nav-menu{
-	background-color: var(--primary);
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	width: 200px;
-	height: 180px;
-	position: fixed;
-	z-index: 2;
-	top:60px;
-	/* right:415px; */
-	border-bottom-left-radius : 10px;
-	border-bottom-right-radius : 10px;
-	color: white;
-}
-.nav-menu-item{
-	width: 100%;
-	padding: 10px;
-	cursor: pointer;
-}
-.nav-menu-link{
-	width: 100%;
-	height: 100%;
-	text-decoration: none;
-	color: var(--sencondary);
-	
-}
-.nav-menu-item:hover,
-.menu_link_active{
-	width: 100%;
-	display: block;
-	background-color: var(--purple);
-	transition: 0.5s;
-}
-.menu_link_active{
-	background-color: rgb(58, 29, 221);
-	border-bottom-left-radius : 10px;
-	border-bottom-right-radius : 10px;
-}
-
-.nav-toggle{
-	display: block;
-}
-.nav-menu_visible{
-	display: none;
-	transition: 0.3s;
-}
 
 .header
 {
@@ -251,7 +213,67 @@ export default {
 .opciones_menu{
 	flex: auto;
 	padding-top: 10px;
+	cursor: pointer;
 }
+
+
+/* Menu*/
+.nav-menu{
+	background-color: #222222;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 200px;
+	height: 180px;
+	position: fixed;
+	z-index: 2;
+	top:60px;
+	/* right:415px; */
+	border-bottom-left-radius : 10px;
+	border-bottom-right-radius : 10px;
+	color: white;
+	font-size: 0.9em;
+}
+.nav-menu-item{
+	width: 100%;
+	padding: 10px;
+	cursor: pointer;
+}
+.nav-menu-link{
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	color: var(--sencondary);
+	
+}
+
+.nav-menu-item:hover
+{
+	background-color: #5640ff;
+}
+
+.menu_link_active{
+	width: 100%;
+	display: block;
+	background-color: var(--purple);
+	transition: 0.5s;
+}
+.menu_link_active{
+	background-color: rgb(58, 29, 221);
+	border-bottom-left-radius : 10px;
+	border-bottom-right-radius : 10px;
+}
+
+.nav-toggle{
+	display: block;
+}
+.nav-menu_visible{
+	display: none;
+	transition: 0.3s;
+}
+
+
+
 .header_banner
 {
 	font-family: 'robotobold','poppinsbold';
